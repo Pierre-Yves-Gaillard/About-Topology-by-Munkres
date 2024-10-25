@@ -1,0 +1,248 @@
+% munkres-a-b
+% https://docs.google.com/document/d/1TQvf_dwiZAUg_kISdcXQAA-sNnwhIA3cm_1ATwFHuLM/edit?tab=t.0
+% !TEX encoding = UTF-8 Unicode
+% https://www.overleaf.com/read/kdwwjvqjrzwb#9fe3a6
+\documentclass[12pt,letterpaper]{article}
+\usepackage{fancyhdr}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{{\tiny munkres-a-b,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1729897851}} % https://www.site24x7.com/tools/time-stamp-converter.html (https://www.unixtimestamp.com/ bad)
+% pdflatex makeindex pdflatex pdflatex
+% pdflatex bibtex pdflatex pdflatex
+% name of the bib file: refs.bib
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb,amsmath,amsthm} 
+%\usepackage[letterpaper,top=30pt,left=40pt,right=40pt,bottom=60pt]{geometry}
+\usepackage[letterpaper,top=50pt,left=60pt,right=60pt,bottom=80pt]{geometry}
+%\usepackage{imakeidx}
+%\usepackage{datetime}
+\usepackage{filemod}%https://stackoverflow.com/questions/2118972/latex-command-for-last-modified
+\usepackage{microtype}
+%\usepackage{graphicx}%https://www.johndcook.com/blog/2020/11/18/rotating-symbols-in-latex/ see also patch240105g
+%\usepackage{tikz-cd}
+%\usepackage{varwidth}
+%\usepackage{comment}
+\usepackage[pdfusetitle]{hyperref}%\texorpdfstring{$\boldsymbol{\tau_2}$}{tau2}
+%\usepackage{marvosym}% emoji https://tex.stackexchange.com/questions/3695/smileys-in-latex https://ctan.org/pkg/marvosym?lang=en
+%\usepackage{showkeys}%\usepackage{showlabels}
+\pagestyle{fancy}
+%\pagestyle{empty}
+\setlength{\parskip}{5pt} % variable
+\renewcommand{\baselinestretch}{1.1} % variable
+\newtheorem{thm}{Theorem}%[section]
+%\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+%\newtheorem{prop}[thm]{Proposition}
+%\theoremstyle{definition}
+%\newtheorem{conv}[thm]{Convention}
+%\newtheorem{set}[thm]{Setting}
+%\newtheorem{dfn}[thm]{Definition}
+\newcommand{\B}{\mathcal B}
+%\newcommand{\bc}{\bigcup}
+%\newcommand{\eps}{\varepsilon}%
+%\newcommand{\id}{\mathrm{id}}
+\newcommand{\mc}{\mathcal}
+\newcommand{\noi}{\noindent}%
+\newcommand{\Q}{\mathbb Q}%
+\newcommand{\sm}{\setminus}
+\newcommand{\R}{\mathbb R}
+\newcommand{\T}{\mathcal T}
+\newcommand{\Z}{\mathbb Z}
+\begin{document}% \tiny \scriptsize \footnotesize \small \normalsize \large \Large \LARGE \huge \Huge 
+\begin{center}{\Huge A few comments about ``Topology'' by Munkres}\bigskip 
+
+Pierre-Yves Gaillard\footnote{ORCID https://orcid.org/0000-0002-7960-1698} 
+\end{center}%\centerline{Munkres}\bigskip % Some material was removed while passing from munkres-a-a to munkres-a-b. Link to munkres-a-a: https://docs.google.com/document/d/1AInZwQapnKWK62NshpdsJ7BJaCtnaj-JC1Wwl0cYaWA/edit?tab=t.0 - 1729512177
+
+\noi As the title indicates, we make a comments about the book \textbf{Topology} by James R. Munkres. This is a work in progress. \bigskip 
+
+\hrule \bigskip
+
+\noi$\bullet$ \textbf{Definition of $\R$ p. 31.} The object $\R$ is defined by assuming that there exists a set having certain properties. We take this assumption for granted. Then it is easy to see that there are several sets having these properties. So, let $\R'$ be a set having the same properties as $\R$. Let $\Z_+',\Z'$ and $\Q'$ be to $\R'$ what $\Z_+,\Z$ and $\Q$ are to $\R$. 
+
+\begin{thm}\label{Tumf}
+There is a unique morphism of fields from $f:\R\to\R'$. This morphism is an isomorphism of ordered fields, and it induces isomorphisms $\Z_+\to\Z_+',\Z\to\Z'$ and $\Q\to\Q'$. 
+\end{thm}
+
+\begin{lem}\label{Lgh}
+There is a unique map $g:\Z_+\to\Z_+'$ such that $g(0)=0$ and $g(n+1)=g(n)+1$ for all $n$ in $\Z_+$. Similarly, there is a unique map $h:\Z_+'\to\Z_+$ such that $h(0)=0$ and $h(n+1)=h(n)+1$ for all $n$ in $\Z_+'$. 
+\end{lem}
+
+\begin{proof} 
+For $i\in\Z_+$ and $\varphi:\{1,\ldots,i\}\to\Z_+'$ define $\rho(\varphi)\in\Z_+'$ by $\rho(\varphi):=\varphi(i)+1$. Then the first statement follows from the Principle of Recursive Definition (Theorem~\ref{TPRD} p.~\pageref{TPRD}). The proof of the second statement is similar. 
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{Tumf}] 
+In the notation of Lemma \ref{Lgh}, set $u:=h\circ g$. Then $u:\Z_+\to\Z_+$ satisfies $u(0)=0$ and $u(n+1)=u(n)+1$ for all $n$ in $\Z_+$. One can easily prove that $u(n)=n$ by induction. The same argument works for $g\circ h$. This shows that $g:\Z_+\to\Z_+'$ and $h:\Z_+'\to\Z_+$ are inverse isomorphisms. Then we extend $g$ to morphisms $\Z\to\Z'$ and $\Q\to\Q'$, and similarly for $h$, and, arguing as before, we show that these morphisms are isomorphisms. More precisely, we see that there is a unique morphism $\Z\to\Z'$ extending $g$, and that this morphism is an isomorphism, and similarly for the morphism $\Q\to\Q'$. So we can make the identifications $\Z_+=\Z_+',\Z=\Z',\Q=\Q'$. To show that there is a unique morphism of fields $\R\to\R'$, and that this morphism is an isomorphism (inducing the identity of $\Q$), we argue as in Section \emph{Appendix to Chapter~1} in \emph{A few comments about ``Principles of Mathematical Analysis'' by Rudin}, available at \url{https://zenodo.org/records/13955297}. 
+\end{proof} \bigskip 
+
+\hrule \bigskip
+
+\noi$\bullet$ \textbf{Exercise 7.6. p. 51.} We say that two sets $A$ and $B$ \textbf{have the same cardinality} if there is a bijection of $A$ with $B$.
+
+\begin{enumerate}
+    \item[(a)] Show that if $B \subset A$ and if there is an injection
+    \[
+    f: A \to B,
+    \]
+    then $A$ and $B$ have the same cardinality. [Hint: Define $A_1 = A, B_1 = B$, and for $n > 1$, $A_n = f(A_{n-1})$ and $B_n = f(B_{n-1})$. (Recursive definition again!) Note that $A_1 \supset B_1 \supset A_2 \supset B_2 \supset A_3 \supset \cdots$ Define a bijection $h: A \to B$ by the rule
+    \[
+    h(x) = \begin{cases} 
+    f(x) & \text{if } x \in A_n\sm B_n \text{ for some } n, \\
+    x & \text{otherwise}.]
+    \end{cases}
+    \]
+    \item[(b)] \textit{Theorem (Schroeder-Bernstein theorem).} If there are injections $f: A \to C$ and $g: C \to A$, then $A$ and $C$ have the same cardinality.
+\end{enumerate} 
+
+\noi\textbf{Solution.} (a) We will freely use the following two obvious facts: 
+
+(F1) For $x\in A$ and $n\in\Z_+$ we have 
+$$
+x\in A_n\iff f(x)\in A_{n+1}\text{ and }x\in B_n\iff f(x)\in B_{n+1}.
+$$ 
+
+(F2) We have $\bigcap_{n\ge1}A_n=\bigcap_{\ge1}B_n=:I$. 
+
+\noi Setting $A_n':=A_n\sm B_n,B_n':=B_n\sm A_{n+1}$, we get 
+$$
+A=\left(\bigcup_{n\ge1}A_n'\right)\cup\left(\bigcup_{n\ge1}B_n'\right)\cup I,
+$$ 
+and this union is disjoint. We also have 
+$$
+B=\left(\bigcup_{n\ge2}A_n'\right)\cup\left(\bigcup_{n\ge1}B_n'\right)\cup I.
+$$ 
+The injection $f$ induces bijections $f_n:A_n'\to A_{n+1}'$ (here we are using (F1)). To define a bijection $h:A\to B$, it suffices to define three bijections 
+$$
+u:\bigcup_{n\ge1}A_n'\to\bigcup_{n\ge2}A_n',\quad v:\bigcup_{n\ge1}B_n'\to\bigcup_{n\ge1}B_n',\quad w:I\to I.
+$$ 
+We define $u$ by $u(x)=f_n(x)$ if $x\in A_n'$, and take $v$ and $w$ to be the identity maps. 
+
+\noi(b) We set $B:=g(C)\subset A$ and define $f':A\to B$ by $f'(a):=g(f(a))$. Then $f':A\to B$ satisfies the assumptions for $f:A\to B$ in (a). \bigskip 
+
+\hrule \bigskip
+
+\noi$\bullet$ \textbf{Exercise 8.7. p. 56.} Prove Theorem 8.4 p. 54. 
+
+\noi\textbf{Solution.} We follow closely Section 8 of the book. Recall the statement of Theorem~8.4. 
+
+\begin{thm}[Principle of Recursive Definition]\label{TPRD}
+Let $A$ be a set; let $a_0$ be an element of $A$. Suppose $\rho$ is a function that assigns, to each function $f$ mapping a nonempty section of the positive integers into $A$, an element of $A$. Then there exists a unique function
+\[h: \mathbb{Z}^+ \to A\]
+such that
+\[
+\begin{aligned}
+h(1) &= a_0,\\
+h(i) &= \rho(h|{\{1,\ldots,i-1\}}) \text{ for } i > 1.
+\end{aligned}
+\tag{$\star$}
+\]
+\end{thm}
+
+The formula $(\star)$ is called a recursion formula for $h$. It specifies $h(1)$, and it expresses the value of $h$ at $i > 1$ in terms of the values of $h$ for positive integers less than $i$. 
+
+The first step is to prove that there exist functions defined on sections $\{1,\ldots,n\}$ of $\mathbb{Z}^+$ that satisfy $(\star)$:
+
+\begin{lem}\label{L8.1}
+Given $n \in \mathbb{Z}^+$, there exists a function
+\[f: \{1,\ldots,n\} \to C\]
+that satisfies $(\star)$ for all $i$ in its domain.
+\end{lem}
+
+\begin{proof}
+The point of this lemma is that it is a statement that depends on $n$; therefore, it is capable of being proved by induction. Let $A$ be the set of all $n$ for which the lemma holds. We show that $A$ is inductive. It then follows that $A = \mathbb{Z}^+$.
+
+The lemma is true for $n = 1$, since the function $f: \{1\} \to C$ defined by the equation
+\[f(1) = a_0\]
+satisfies $(\star)$.
+
+Supposing the lemma to be true for $n-1$, we prove it true for $n$. By hypothesis, there is a function $f': \{1,\ldots,n-1\} \to C$ satisfying $(\star)$ for all $i$ in its domain. Define $f: \{1,\ldots,n\} \to C$ by the equations
+\begin{align*}
+f(i) &= f'(i) \text{ for } i \in \{1,\ldots,n-1\},\\
+f(n) &= \rho(f'|{\{1,\ldots,n-1\}}).
+\end{align*}
+
+Note that this definition is an acceptable one; it does not define $f$ in terms of itself but in terms of the given function $f'$.
+
+It is easy to check that $f$ satisfies $(\star)$ for all $i$ in its domain. The function $f$ satisfies $(\star)$ for $i \leq n-1$ because it equals $f'$ there. And $f$ satisfies $(\star)$ for $i = n$ because, by definition,
+\[f(n) = \rho(f'|{\{1,\ldots,n-1\}})\]
+and $f'|\{1,\ldots,n-1\}=f|\{1,\ldots,n-1\}$.
+\end{proof}
+
+\begin{lem}\label{L8.2}
+Suppose that $f: \{1,\ldots,n\} \to C$ and $g: \{1,\ldots,m\} \to C$ both satisfy $(\star)$ for all $i$ in their respective domains. Then $f(i) = g(i)$ for all $i$ in both domains.
+\end{lem}
+
+\begin{proof}
+Suppose not. Let $i$ be the smallest integer for which $f(i) \neq g(i)$. The integer $i$ is not 1, because
+\[f(1) = a_0 = g(1),\]
+by $(\star)$. Now for all $j < i$, we have $f(j) = g(j)$. Because $f$ and $g$ satisfy $(\star)$,
+\begin{align*}
+f(i) &= \rho(f|{\{1,\ldots,n-1\}}),\\
+g(i) &= \rho(g|{\{1,\ldots,n-1\}}).
+\end{align*}
+Since $f|\{1,\ldots,i-1\}=g|\{1,\ldots,i-1\}$, we have $f(i) = g(i)$, contrary to the choice of $i$.
+\end{proof}
+
+\begin{thm}
+There exists a unique function $h: \mathbb{Z}^+ \to C$ satisfying $(\star)$ for all $i \in \mathbb{Z}^+$.
+\end{thm}
+
+\begin{proof}
+By Lemma~\ref{L8.1}, there exists for each $n$ a function that maps $\{1,\ldots,n\}$ into $C$ and satisfies $(\star)$ for all $i$ in its domain. Given $n$, Lemma~\ref{L8.2} shows that this function is unique; two such functions having the same domain must be equal. Let $f_n: \{1,\ldots,n\} \to C$ denote this unique function.
+
+Now comes the crucial step. We define a function $h: \mathbb{Z}^+ \to C$ by defining its rule to be the union $U$ of the rules of the functions $f_n$. The rule for $f_n$ is a subset of $\{1,\ldots,n\} \times C$; therefore, $U$ is a subset of $\mathbb{Z}^+ \times C$. We must show that $U$ is the rule for a function $h: \mathbb{Z}^+ \to C$.
+
+That is, we must show that each element $i$ of $\mathbb{Z}^+$ appears as the first coordinate of exactly one element of $U$. This is easy. The integer $i$ lies in the domain of $f_n$ if and only if $n > i$. Therefore, the set of elements of $U$ of which $i$ is the first coordinate is precisely the set of all pairs of the form $(i,f_n(i))$, for $n \geq i$. Now Lemma~\ref{L8.2} tells us that $f_n(i) = f_m(i)$ if $n,m \geq i$. Therefore, all these elements of $U$ are equal; that is, there is only one element of $U$ that has $i$ as its first coordinate.
+
+To show that $h$ satisfies $(\star)$ is also easy; it is a consequence of the following facts:
+\begin{align*}
+h(i) &= f_n(i) \text{ for } i \leq n,\\
+f_n &\text{ satisfies $(\star)$ for all $i$ in its domain.}
+\end{align*}
+
+The proof of uniqueness is a copy of the proof of Lemma~\ref{L8.2}.
+\end{proof} \bigskip 
+
+\hrule \bigskip 
+
+\noi$\bullet$ \textbf{Solution to Exercise 13.6 p. 83.} We must show that the topologies $\mc T_\ell$ and $\mc T_K$ are incomparable. 
+
+\noi Claim: $[2,3)\notin\mc T_K$. Proof. If not we would have $2\in(a,b)\sm K\subset[2,3)$ for some $a$ and $b$, hence $a<2$ and $a\le2$, contradiction. 
+
+\noi Claim: $(-1,1)\sm K\notin\mc T_\ell$. Proof. If not we would have $0\in[a,b)\subset(-1,1)\sm K\subset[2,3)$ for some $a$ and $b$, hence $a\le0<b$, hence $a<\frac1n<b$ for some $n$, contradiction. \bigskip 
+
+\hrule \bigskip
+
+\noi$\bullet$ \textbf{Solution to Exercise 13.7 p. 83.} Let us use the following notation: 
+
+$\T_s:=$ standard topology, 
+
+$\T_K:=$ topology of $\R_K$, 
+
+$\T_{fc}:=$ finite complement topology, 
+
+$\T_u:=$ upper limit topology (having the sets $(a,b]$ as basis), 
+
+$\T_\infty:=$ topology having the sets $(-\infty,a)$ as basis. 
+
+\noi We denote the corresponding topological spaces by $\R_s,\R_K,\R_{fc},\R_u$ and $\R_\infty$. Finally we write $\B_s,\B_K,\B_u$ and $\B_\infty$ for the obvious bases. 
+
+The inclusions between these five topologies on $\R$ can be summarized by the diagram 
+$$
+\begin{matrix}
+&u\\ 
+&K\\ 
+&s\\ 
+fc&&\infty,
+\end{matrix}
+$$ 
+where ``$i$ below $j$'' means ``$\T_i\subsetneq\T_j$''\footnote{I denote inclusion by $\subset$ and proper inclusion by $\subsetneq$. I know that, in some sense, it would be more coherent to use $\subseteq$ for inclusion, but I prefer to do it that way, and I hope the reader will not be confused.}, and ``$i$ and $j$ on the same level'' means ``$\T_i$ and $\T_j$ are incomparable''. 
+
+Preliminary comments: It is easy to see that the elements of $\T_\infty$ are $\varnothing$, the intervals $(-\infty,a)$, and $\R$, and to observe that $\T_\infty\cap\T_{fc}=\{\varnothing,\R\}$. It is also easy to compare the standard topology $\T_s$ to the others: the elements of $\T_{fc}$ and $\T_\infty$ are clearly open in $\R_s$, and it is plain that the intervals $(a,b)$ (which are the elements on $\B_s$) are open in $\R_K$ and in $\R_\infty$ (note that $(a,b)=\bigcup_{d<b}(a,d])$. Clearly, $(-1,1)\sm K\in\T_K$ and $(a,b]\in\T_u$ are not open in $\R_s$. Moreover $(2,3]$ is in $\T_u$ but not in $\T_K$. So, it only remains to prove $\T_K\subset\T_u$. 
+
+Let $x$ be in $(a,b)\sm K$. It suffices to show that there is a $c$ such that $x\in(c,x]\subset(a,b)\sm K$. If $x\le0$ we set $c:=a$. If $\frac1{n+1}<x<\frac1n$ we set $c:=\frac1{n+1}\,$. If $x>1$ we set $c:=\max(1,a)$. 
+
+\end{document}
