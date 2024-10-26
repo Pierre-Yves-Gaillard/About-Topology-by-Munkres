@@ -1,0 +1,250 @@
+% munkres-a-c
+% https://docs.google.com/document/d/1Ix82_j1XLeXKhETXty0vdsDyu7fSOVl2SKo6uIfrlAY/edit?tab=t.0
+% !TEX encoding = UTF-8 Unicode
+% https://www.overleaf.com/read/kdwwjvqjrzwb#9fe3a6 
+% https://github.com/Pierre-Yves-Gaillard/About-Topology-by-Munkres
+\documentclass[12pt,letterpaper]{article}
+\usepackage{fancyhdr}
+\fancyhf{}
+\fancyfoot[R]{{\tiny munkres-a-c,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1729975512}} % https://www.site24x7.com/tools/time-stamp-converter.html (https://www.unixtimestamp.com/ bad)
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\thepage}
+% pdflatex makeindex pdflatex pdflatex
+% pdflatex bibtex pdflatex pdflatex
+% name of the bib file: refs.bib
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb,amsmath,amsthm} 
+%\usepackage[letterpaper,top=30pt,left=40pt,right=40pt,bottom=60pt]{geometry}
+\usepackage[letterpaper,top=50pt,left=60pt,right=60pt,bottom=80pt]{geometry}
+%\usepackage{imakeidx}
+%\usepackage{datetime}
+\usepackage{filemod}%https://stackoverflow.com/questions/2118972/latex-command-for-last-modified
+\usepackage{microtype}
+%\usepackage{graphicx}%https://www.johndcook.com/blog/2020/11/18/rotating-symbols-in-latex/ see also patch240105g
+%\usepackage{tikz-cd}
+%\usepackage{varwidth}
+%\usepackage{comment}
+\usepackage[pdfusetitle]{hyperref}%\texorpdfstring{$\boldsymbol{\tau_2}$}{tau2}
+%\usepackage{marvosym}% emoji https://tex.stackexchange.com/questions/3695/smileys-in-latex https://ctan.org/pkg/marvosym?lang=en
+%\usepackage{showkeys}%\usepackage{showlabels}
+\pagestyle{fancy}
+%\pagestyle{empty}
+\setlength{\parskip}{5pt} % variable
+%\renewcommand{\baselinestretch}{1.1} % variable
+\newtheorem{thm}{Theorem}%[section]
+%\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+%\newtheorem{prop}[thm]{Proposition}
+%\theoremstyle{definition}
+%\newtheorem{conv}[thm]{Convention}
+%\newtheorem{set}[thm]{Setting}
+%\newtheorem{dfn}[thm]{Definition}
+\newcommand{\B}{\mathcal B}
+%\newcommand{\bc}{\bigcup}
+%\newcommand{\eps}{\varepsilon}%
+%\newcommand{\id}{\mathrm{id}}
+\newcommand{\mc}{\mathcal}
+\newcommand{\noi}{\noindent}%
+\newcommand{\Q}{\mathbb Q}%
+\newcommand{\sm}{\setminus}
+\newcommand{\R}{\mathbb R}
+\newcommand{\T}{\mathcal T}
+\newcommand{\Z}{\mathbb Z}
+\begin{document}% \tiny \scriptsize \footnotesize \small \normalsize \large \Large \LARGE \huge \Huge 
+\begin{center}{\Huge A few comments about ``Topology'' by Munkres}\bigskip 
+
+Pierre-Yves Gaillard\footnote{ORCID https://orcid.org/0000-0002-7960-1698} 
+\end{center}%\centerline{Munkres}\bigskip % Some material was removed while passing from munkres-a-a to munkres-a-b. Link to munkres-a-a: https://docs.google.com/document/d/1AInZwQapnKWK62NshpdsJ7BJaCtnaj-JC1Wwl0cYaWA/edit?tab=t.0 - 1729512177
+
+\noi As the title indicates, we make a comments about the book \textbf{Topology} by James R. Munkres. This is a work in progress. \bigskip 
+
+\hrule \bigskip
+
+\noi$\bullet$ \textbf{Definition of $\R$ p. 31.} The object $\R$ is defined by assuming that there exists a set $\R$ having certain properties. We take this assumption for granted. Then it is easy to see that there are several sets having these properties. So, let $\R'$ be a set having the same properties as $\R$. Let $\Z_+',\Z'$ and $\Q'$ be to $\R'$ what $\Z_+,\Z$ and $\Q$ are to $\R$. 
+
+\begin{thm}\label{Tumf}
+There is a unique morphism of fields from $f:\R\to\R'$. This morphism is an isomorphism of ordered fields, and it induces isomorphisms $\Z_+\to\Z_+',\Z\to\Z'$ and $\Q\to\Q'$. 
+\end{thm}
+
+\begin{lem}\label{Lgh}
+There is a unique map $g:\Z_+\to\Z_+'$ such that $g(0)=0$ and $g(n+1)=g(n)+1$ for all $n$ in $\Z_+$. Similarly, there is a unique map $h:\Z_+'\to\Z_+$ such that $h(0)=0$ and $h(n+1)=h(n)+1$ for all $n$ in $\Z_+'$. 
+\end{lem}
+
+\begin{proof} 
+For $i\in\Z_+$ and $\varphi:\{1,\ldots,i\}\to\Z_+'$ define $\rho(\varphi)\in\Z_+'$ by $\rho(\varphi):=\varphi(i)+1$. Then the first statement follows from the Principle of Recursive Definition (Theorem~\ref{TPRD} p.~\pageref{TPRD}). The proof of the second statement is similar. 
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{Tumf}] 
+In the notation of Lemma \ref{Lgh}, set $u:=h\circ g$. Then $u:\Z_+\to\Z_+$ satisfies $u(0)=0$ and $u(n+1)=u(n)+1$ for all $n$ in $\Z_+$. One can easily prove that $u(n)=n$ by induction. The same argument works for $g\circ h$. This shows that $g:\Z_+\to\Z_+'$ and $h:\Z_+'\to\Z_+$ are inverse isomorphisms. Then we extend $g$ to morphisms $\Z\to\Z'$ and $\Q\to\Q'$, and similarly for $h$, and, arguing as before, we show that these morphisms are isomorphisms. More precisely, we see that there is a unique morphism $\Z\to\Z'$ extending $g$, and that this morphism is an isomorphism, and similarly for the morphism $\Q\to\Q'$. So we can make the identifications $\Z_+=\Z_+',\Z=\Z',\Q=\Q'$. To show that there is a unique morphism of fields $\R\to\R'$, and that this morphism is an isomorphism (inducing the identity of $\Q$), we argue as in Section \emph{Appendix to Chapter~1} in \emph{A few comments about ``Principles of Mathematical Analysis'' by Rudin}, available at \url{https://zenodo.org/records/13955297}. 
+\end{proof} \bigskip 
+
+\hrule \bigskip
+
+\noi$\bullet$ \textbf{Exercise 7.6. p. 51.} We say that two sets $A$ and $B$ \textbf{have the same cardinality} if there is a bijection of $A$ with $B$.
+
+\begin{enumerate}
+    \item[(a)] Show that if $B \subset A$ and if there is an injection
+    \[
+    f: A \to B,
+    \]
+    then $A$ and $B$ have the same cardinality. [Hint: Define $A_1 = A, B_1 = B$, and for $n > 1$, $A_n = f(A_{n-1})$ and $B_n = f(B_{n-1})$. (Recursive definition again!) Note that $A_1 \supset B_1 \supset A_2 \supset B_2 \supset A_3 \supset \cdots$ Define a bijection $h: A \to B$ by the rule
+    \[
+    h(x) = \begin{cases} 
+    f(x) & \text{if } x \in A_n\sm B_n \text{ for some } n, \\
+    x & \text{otherwise}.]
+    \end{cases}
+    \]
+    \item[(b)] \textit{Theorem (Schroeder-Bernstein theorem).} If there are injections $f: A \to C$ and $g: C \to A$, then $A$ and $C$ have the same cardinality.
+\end{enumerate} 
+
+\noi\textbf{Solution.} (a) We will freely use the following two obvious facts: 
+
+(F1) For $x\in A$ and $n\in\Z_+$ we have 
+$$
+x\in A_n\iff f(x)\in A_{n+1}\text{ and }x\in B_n\iff f(x)\in B_{n+1}.
+$$ 
+
+(F2) We have $\bigcap_{n\ge1}A_n=\bigcap_{\ge1}B_n=:I$. 
+
+\noi Setting $A_n':=A_n\sm B_n,B_n':=B_n\sm A_{n+1}$, we get 
+$$
+A=\left(\bigcup_{n\ge1}A_n'\right)\cup\left(\bigcup_{n\ge1}B_n'\right)\cup I,
+$$ 
+and this union is disjoint. We also have 
+$$
+B=\left(\bigcup_{n\ge2}A_n'\right)\cup\left(\bigcup_{n\ge1}B_n'\right)\cup I.
+$$ 
+The injection $f$ induces bijections $f_n:A_n'\to A_{n+1}'$ (here we are using (F1)). To define a bijection $h:A\to B$, it suffices to define three bijections 
+$$
+u:\bigcup_{n\ge1}A_n'\to\bigcup_{n\ge2}A_n',\quad v:\bigcup_{n\ge1}B_n'\to\bigcup_{n\ge1}B_n',\quad w:I\to I.
+$$ 
+We define $u$ by $u(x)=f_n(x)$ if $x\in A_n'$, and take $v$ and $w$ to be the identity maps. 
+
+\noi(b) We set $B:=g(C)\subset A$ and define $f':A\to B$ by $f'(a):=g(f(a))$. Then $f':A\to B$ satisfies the assumptions for $f:A\to B$ in (a). \bigskip 
+
+\hrule \bigskip 
+
+\noi$\bullet$ \textbf{Exercise 8.7. p. 56.} Prove Theorem 8.4 p. 54. 
+
+\noi\textbf{Solution.} %I follow closely Section 8 of the book. 
+Recall the statement of Theorem~8.4. 
+
+\begin{thm}[Principle of Recursive Definition, Theorem 8.4 of the book]\label{TPRD}
+Let $A$ be a set; let $a_0$ be an element of $A$. Suppose $\rho$ is a function that assigns, to each function $f$ mapping a nonempty section of the positive integers into $A$, an element of $A$. Then there exists a unique function
+\[h: \mathbb{Z}^+ \to A\]
+such that
+\[
+\begin{aligned}
+h(1) &= a_0,\\
+h(i) &= \rho(h|{\{1,\ldots,i-1\}}) \text{ for } i > 1.
+\end{aligned}
+\tag{$*$}
+\]
+\end{thm}
+
+The formula $(*)$ is called a recursion formula for $h$. It specifies $h(1)$, and it expresses the value of $h$ at $i > 1$ in terms of the values of $h$ for positive integers less than $i$. 
+
+The book gives a detailed proof of the particular case when $\rho(h|{\{1,\ldots,i-1\}})$ is equal to $\min(C\sm h(\{1,\ldots,i-1\}))$, where ``$\min$'' means ``\emph{minimum}'', and $C$ is an infinite set. A close inspection of this proof reveals that the sole property of the element $c$ of $C$ defined by the equality $c:=\min(C\sm h(\{1,\ldots,i-1\}))$ is that it depends only on the restriction $h|{\{1,\ldots,i-1\}}$. This implies that, if, in the proof given by the book, we replace ``$\min(C\sm h(\{1,\ldots,i-1\}))$'' with ``$\rho(h|{\{1,\ldots,i-1\}})$'', then we obtain a proof of Theorem~\ref{TPRD}. \bigskip 
+
+\hrule \bigskip 
+
+\noi$\bullet$ \textbf{Exercise 10.7 p. 67.} Let $J$ be a well-ordered set. A subset $J_0$ of $J$ is said to be \textbf{inductive} if for every $\alpha \in J$,
+\[(S_\alpha \subset J_0) \Rightarrow \alpha \in J_0.\]
+
+\noi\emph{Theorem} (The principle of transfinite induction). If $J$ is a well-ordered set and $J_0$ is an inductive subset of $J$, then $J_0 = J$. 
+
+\noi\textbf{Solution.} If $J_0\ne J$, let $\alpha$ be the least element of $J\sm J_0$. We get $S_\alpha \subset J_0$, and thus $\alpha \in J_0$, contradiction. \bigskip 
+
+\hrule \bigskip 
+
+\noi$\bullet$ \textbf{Exercise 10.10 p. 67.} \textbf{Theorem.} Let $J$ and $C$ be well-ordered sets; assume that there is no surjective function mapping a section of $J$ onto $C$. Then there exists a unique function $h: J \to C$ satisfying the equation
+\[h(x) = \min(C\sm h(S_x)) \tag{$\ast$}
+\]
+for each $x \in J$, where $S_x$ is the section of $J$ by $x$. 
+
+\noi\textbf{Proof.}
+\begin{enumerate}
+\item[(a)] If $h$ and $k$ map sections of $J$, or all of $J$, into $C$ and satisfy ($\ast$) for all $x$ in their respective domains, show that $h(x) = k(x)$ for all $x$ in both domains.
+
+\item[(b)] If there exists a function $h: S_\alpha \to C$ satisfying ($\ast$), show that there exists a function $k: S_\alpha \cup \{\alpha\} \to C$ satisfying ($\ast$).
+
+\item[(c)] If $K \subset J$ and for all $\alpha \in K$ there exists a function $h_\alpha: S_\alpha \to C$ satisfying ($\ast$), show that there exists a function
+\[k: \bigcup_{\alpha \in K} S_\alpha \to C\]
+satisfying ($\ast$).
+
+\item[(d)] Show by transfinite induction that for every $\beta \in J$, there exists a function $h_\beta: S_\beta \to C$ satisfying ($\ast$). [Hint: If $\beta$ has an immediate predecessor $\alpha$, then $S_\beta = S_\alpha \cup \{\alpha\}$. If not, $S_\beta$ is the union of all $S_\alpha$ with $\alpha < \beta$.]
+
+\item[(e)] Prove the theorem.
+\end{enumerate} 
+
+\newpage 
+
+\noi\textbf{Solution.} 
+
+\noi(a) Otherwise there would be a least $x$ such that $h(x)\ne k(x)$, we would get $h(S_x)=k(S_x)$, and $(*)$ would yield a contradiction. 
+
+\noi(b) We define $k$ by $k(x)=h(x)$ if $x<\alpha$ and $k(x)=\min(C\sm h(S_x))$ if $x=\alpha$, and verify that $k$ satisfies $(*)$. 
+
+\noi(c) Set $k(x)=h_\alpha(x)$ if $x\in S_\alpha$. To show that $k(x)$ is well defined, we must check that $\beta>\alpha$ implies $h_\beta(x)=h_\alpha(x)$. But this follows from (a). 
+
+\noi(d) Let $I$ be the set of all $\beta\in J$ such that there is a map $h_\beta:S_\beta\to C$ satisfying $(*)$. It suffices to show that $I$ is inductive. So, assume that $\beta$ is in $J$ and that $S_\beta\subset I$. We must show $\beta\in I$. To do that, we use (b) if $\beta$ has an immediate predecessor, and we use (c) if not. 
+
+\noi(e) We define $h$ by 
+$$
+h(x)=
+\begin{cases}
+\min(C\sm h_x(S_x))&\text{if }x=\max(J)\\ 
+h_{x+1}(x)&\text{if }x\ne\max(J),
+\end{cases} 
+$$ 
+where ``$x\ne\max(J)$'' means ``$x\ne\max(J)$ if $J$ has a maximum'', and $x+1$ is the least element greater than $x$. Let us show that $h$ satisfies $(*)$, that is, $h(x)=\min(C\sm h(S_x))$. We can assume $x\ne\max(J)$ (in the above sense). We must show $h_{x+1}(x)=\min(C\sm h(S_x))$. Since we have $h_{x+1}(x)=\min(C\sm h_{x+1}(S_x))$ by (d) it suffices to prove $h(S_x)=h_{x+1}(S_x)$. Let $y$ be in $S_x$, that is, $y\in J$ and $y<x$. It is enough to verify $h(y)=h_{x+1}(y)$, that is, $h_{y+1}(y)=h_{x+1}(y)$. We have $y+1<x+1$, and thus $S_{y+1}\subset S_{x+1}$, and (a) implies $h_{x+1}|S_{y+1}=h_{y+1}$. This proves $h_{y+1}(y)=h_{x+1}(y)$, which is what we wanted. \bigskip 
+
+\hrule \bigskip 
+
+\noi$\bullet$ \textbf{Supplementary Exercise 11.1 p. 72.} \emph{Theorem} (General principle of recursive definition). Let $J$ be a well-ordered set; let $C$ be a set. Let $\mc F$ be the set of all functions mapping sections of $J$ into $C$. Given a function $\rho:\mc F \to C$, there exists a unique function $h: J \to C$ such that $h(\alpha) = \rho(h|{S_\alpha})$ for each $\alpha \in J$.
+
+\noi[Hint: Follow the pattern outlined in Exercise 10 of §10.] 
+
+\noi\textbf{Solution.} In the solution to Exercise 10.10 above, we just replace $\min(C\sm h(S_x))$ with $\rho(h|{S_x})$. (See solution to Exercise~8.7 above.) \bigskip 
+
+\hrule \bigskip 
+
+\noi$\bullet$ \textbf{Solution to Exercise 13.6 p. 83.} We must show that the topologies $\mc T_\ell$ and $\mc T_K$ are incomparable. 
+
+\noi Claim: $[2,3)\notin\mc T_K$. Proof. If not we would have $2\in(a,b)\sm K\subset[2,3)$ for some $a$ and $b$, hence $a<2$ and $a\le2$, contradiction. 
+
+\noi Claim: $(-1,1)\sm K\notin\mc T_\ell$. Proof. If not we would have $0\in[a,b)\subset(-1,1)\sm K\subset[2,3)$ for some $a$ and $b$, hence $a\le0<b$, hence $a<\frac1n<b$ for some $n$, contradiction. \bigskip 
+
+\hrule \bigskip
+
+\noi$\bullet$ \textbf{Solution to Exercise 13.7 p. 83.} Let us use the following notation: 
+
+$\T_s:=$ standard topology, 
+
+$\T_K:=$ topology of $\R_K$, 
+
+$\T_{fc}:=$ finite complement topology, 
+
+$\T_u:=$ upper limit topology (having the sets $(a,b]$ as basis), 
+
+$\T_\infty:=$ topology having the sets $(-\infty,a)$ as basis. 
+
+\noi We denote the corresponding topological spaces by $\R_s,\R_K,\R_{fc},\R_u$ and $\R_\infty$. Finally we write $\B_s,\B_K,\B_u$ and $\B_\infty$ for the obvious bases. 
+
+The inclusions between these five topologies on $\R$ can be summarized by the diagram 
+$$
+\begin{matrix}
+&u\\ 
+&K\\ 
+&s\\ 
+fc&&\infty,
+\end{matrix}
+$$ 
+where ``$i$ below $j$'' means ``$\T_i\subsetneq\T_j$''\footnote{I denote inclusion by $\subset$ and proper inclusion by $\subsetneq$. I know that, in some sense, it would be more coherent to use $\subseteq$ for inclusion, but I prefer to do it that way, and hope the reader will not be confused.}, and ``$i$ and $j$ on the same level'' means ``$\T_i$ and $\T_j$ are incomparable''. 
+
+Preliminary comments: It is easy to see that the elements of $\T_\infty$ are $\varnothing$, the intervals $(-\infty,a)$, and $\R$, and to observe that $\T_\infty\cap\T_{fc}=\{\varnothing,\R\}$. It is also easy to compare the standard topology $\T_s$ to the others: the elements of $\T_{fc}$ and $\T_\infty$ are clearly open in $\R_s$, and it is plain that the intervals $(a,b)$ (which are the elements on $\B_s$) are open in $\R_K$ and in $\R_\infty$ (note that $(a,b)=\bigcup_{d<b}(a,d])$. Clearly, $(-1,1)\sm K\in\T_K$ and $(a,b]\in\T_u$ are not open in $\R_s$. Moreover $(2,3]$ is in $\T_u$ but not in $\T_K$. So, it only remains to prove $\T_K\subset\T_u$. 
+
+Let $x$ be in $(a,b)\sm K$. It suffices to show that there is a $c$ such that $x\in(c,x]\subset(a,b)\sm K$. If $x\le0$ we set $c:=a$. If $\frac1{n+1}<x<\frac1n$ we set $c:=\frac1{n+1}\,$. If $x>1$ we set $c:=\max(1,a)$. 
+
+\end{document}
