@@ -1,11 +1,11 @@
-% munkres-a-c
+% munkres-a-c 1731068151 https://www.site24x7.com/tools/time-stamp-converter.html
 % https://docs.google.com/document/d/1Ix82_j1XLeXKhETXty0vdsDyu7fSOVl2SKo6uIfrlAY/edit?tab=t.0
 % !TEX encoding = UTF-8 Unicode
-% https://www.google.com/search?q=current+date+and+time 11:17 a.m. Saturday, November 2, 2024 (EDT) Time in Montreal, QC
+% https://www.google.com/search?q=current+date+and+time 7:14 a.m. Friday, November 8, 2024 (EST) Time in Montreal, QC
 \documentclass[12pt,letterpaper]{article}
 \usepackage{fancyhdr}
 \fancyhf{}
-\fancyfoot[R]{{\tiny munkres-a-c,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1730560704}} % https://www.site24x7.com/tools/time-stamp-converter.html (https://www.unixtimestamp.com/ bad) 
+\fancyfoot[R]{{\tiny munkres-a-c,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1731068151}} % https://www.site24x7.com/tools/time-stamp-converter.html (https://www.unixtimestamp.com/ bad) 
 % https://www.overleaf.com/read/kdwwjvqjrzwb#9fe3a6 
 % https://github.com/Pierre-Yves-Gaillard/About-Topology-by-Munkres https://latexonline.cc/
 % LaTeX pense-bête https://docs.google.com/document/d/1kgwDp0rjOmd-9h5ryYvDeNTSUzUSdG13mo4ZNFToeYA/edit?tab=t.0
@@ -41,7 +41,7 @@
 Pierre-Yves Gaillard\footnote{ORCID https://orcid.org/0000-0002-7960-1698} 
 \end{center}%\centerline{Munkres}\bigskip % Some material was removed while passing from munkres-a-a to munkres-a-b. Link to munkres-a-a: https://docs.google.com/document/d/1AInZwQapnKWK62NshpdsJ7BJaCtnaj-JC1Wwl0cYaWA/edit?tab=t.0 - 1729512177
 
-\noi As the title indicates, we make a comments about the book \textbf{Topology} by James R. Munkres. This is a work in progress. \bigskip 
+\noi As the title indicates, we make a comments about the book \textbf{Topology} by James R. Munkres. This is a work in progress. The last version of this text is available here: \url{https://www.overleaf.com/read/kdwwjvqjrzwb#9fe3a6} \bigskip 
 
 \hrule \bigskip
 
@@ -62,6 +62,24 @@ For $i\in\Z_+$ and $\varphi:\{1,\ldots,i\}\to\Z_+'$ define $\rho(\varphi)\in\Z_+
 \begin{proof}[Proof of Theorem \ref{Tumf}] 
 In the notation of Lemma \ref{Lgh}, set $u:=h\circ g$. Then $u:\Z_+\to\Z_+$ satisfies $u(0)=0$ and $u(n+1)=u(n)+1$ for all $n$ in $\Z_+$. One can easily prove that $u(n)=n$ by induction. The same argument works for $g\circ h$. This shows that $g:\Z_+\to\Z_+'$ and $h:\Z_+'\to\Z_+$ are inverse isomorphisms. Then we extend $g$ to morphisms $\Z\to\Z'$ and $\Q\to\Q'$, and similarly for $h$, and, arguing as before, we show that these morphisms are isomorphisms. More precisely, we see that there is a unique morphism $\Z\to\Z'$ extending $g$, and that this morphism is an isomorphism, and similarly for the morphism $\Q\to\Q'$. So we can make the identifications $\Z_+=\Z_+',\Z=\Z',\Q=\Q'$. To show that there is a unique morphism of fields $\R\to\R'$, and that this morphism is an isomorphism (inducing the identity of $\Q$), we argue as in Section \emph{Appendix to Chapter~1} in \emph{A few comments about ``Principles of Mathematical Analysis'' by Rudin}, available at \url{https://zenodo.org/records/13955297}. 
 \end{proof} \bigskip 
+
+\hrule \bigskip 
+
+\noi\textbf{Theorem 7.8. p. 50.} Recall the statement: 
+
+\begin{thm}[Theorem 7.8. p. 50 of the book]
+Let $A$ be a set. There is no injective map $f : \mathcal{P}(A) \to A$, and there is no surjective map $g : A \to \mathcal{P}(A)$.
+\end{thm} 
+
+Here is my favourite way of phrasing the argument showing that there is no surjective map $g : A \to \mathcal{P}(A)$. Let $g : A \to \mathcal{P}(A)$ be a map, and set $B:=\{a\mid a\notin g(a)\}$, so that we have, for all $a$ in $A$, 
+$$
+a\in B\iff a\notin g(a).
+$$ 
+Let $a_0$ be in $A$. If we had $g(a_0)=B$, we would get, for all $a$ in $A$, 
+$$
+a\in g(a_0)\iff a\notin g(a),
+$$ 
+and we immediately that setting $a:=a_0$ yields a contradiction. This shows that $B$ is not in the range of $g$. \bigskip 
 
 \hrule \bigskip
 
