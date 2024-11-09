@@ -1,11 +1,11 @@
-% munkres-a-c 1731068151 https://www.site24x7.com/tools/time-stamp-converter.html
+% munkres-a-c 1731152510 https://www.site24x7.com/tools/time-stamp-converter.html
 % https://docs.google.com/document/d/1Ix82_j1XLeXKhETXty0vdsDyu7fSOVl2SKo6uIfrlAY/edit?tab=t.0
 % !TEX encoding = UTF-8 Unicode
-% https://www.google.com/search?q=current+date+and+time 7:14 a.m. Friday, November 8, 2024 (EST) Time in Montreal, QC
+% https://www.google.com/search?q=current+date+and+time 6:42 a.m. Saturday, November 9, 2024 (EST) Time in Montreal, QC
 \documentclass[12pt,letterpaper]{article}
 \usepackage{fancyhdr}
 \fancyhf{}
-\fancyfoot[R]{{\tiny munkres-a-c,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1731068151}} % https://www.site24x7.com/tools/time-stamp-converter.html (https://www.unixtimestamp.com/ bad) 
+\fancyfoot[R]{{\tiny munkres-a-c,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1731152510}} % https://www.site24x7.com/tools/time-stamp-converter.html (https://www.unixtimestamp.com/ bad) 
 % https://www.overleaf.com/read/kdwwjvqjrzwb#9fe3a6 
 % https://github.com/Pierre-Yves-Gaillard/About-Topology-by-Munkres https://latexonline.cc/
 % LaTeX pense-bête https://docs.google.com/document/d/1kgwDp0rjOmd-9h5ryYvDeNTSUzUSdG13mo4ZNFToeYA/edit?tab=t.0
@@ -41,7 +41,7 @@
 Pierre-Yves Gaillard\footnote{ORCID https://orcid.org/0000-0002-7960-1698} 
 \end{center}%\centerline{Munkres}\bigskip % Some material was removed while passing from munkres-a-a to munkres-a-b. Link to munkres-a-a: https://docs.google.com/document/d/1AInZwQapnKWK62NshpdsJ7BJaCtnaj-JC1Wwl0cYaWA/edit?tab=t.0 - 1729512177
 
-\noi As the title indicates, we make a comments about the book \textbf{Topology} by James R. Munkres. This is a work in progress. The last version of this text is available here: \url{https://www.overleaf.com/read/kdwwjvqjrzwb#9fe3a6} \bigskip 
+\noi As the title indicates, we make a comments about the book \textbf{Topology} by James R. Munkres. This is a work in progress. The last version of this text is available here: \url{https://www.overleaf.com/read/kdwwjvqjrzwb#9fe3a6} Another version is available here: \url{https://github.com/Pierre-Yves-Gaillard/About-Topology-by-Munkres} \bigskip 
 
 \hrule \bigskip
 
@@ -181,7 +181,7 @@ satisfying ($\ast$).
 \item[(e)] Prove the theorem.
 \end{enumerate} 
 
-\newpage 
+%\newpage 
 
 \noi\textbf{Solution.} 
 
@@ -203,7 +203,7 @@ h_{x+1}(x)&\text{if }x\ne\max(J),
 $$ 
 where ``$x\ne\max(J)$'' means ``$x\ne\max(J)$ if $J$ has a maximum'', and $x+1$ is the least element greater than $x$. Let us show that $h$ satisfies $(*)$, that is, $h(x)=\min(C\sm h(S_x))$. We can assume $x\ne\max(J)$ (in the above sense). We must show $h_{x+1}(x)=\min(C\sm h(S_x))$. Since we have $h_{x+1}(x)=\min(C\sm h_{x+1}(S_x))$ by (d) it suffices to prove $h(S_x)=h_{x+1}(S_x)$. Let $y$ be in $S_x$, that is, $y\in J$ and $y<x$. It is enough to verify $h(y)=h_{x+1}(y)$, that is, $h_{y+1}(y)=h_{x+1}(y)$. We have $y+1<x+1$, and thus $S_{y+1}\subset S_{x+1}$, and (a) implies $h_{x+1}|S_{y+1}=h_{y+1}$. This proves $h_{y+1}(y)=h_{x+1}(y)$, which is what we wanted. \bigskip 
 
-\hrule \bigskip 
+\hrule \bigskip \newpage 
 
 \noi$\bullet$ \textbf{Supplementary Exercise 11.1 p. 72.} 
 
@@ -240,7 +240,7 @@ that $h(\alpha)=\rho(h|S_\alpha)$ for each $\alpha\in J$.
 
 \noi We want to show that (i) and (ii') are equivalent. 
 
-\noi(i) implies (ii'). We prove $h(S_x)\ne E$ by noting that $h(S_x)=E$ we would entail $h(x)=h(y)$ for some $y<x$, contradiction. To prove $h(x)=\min(h(S_x)^c)$, assume by contradiction that we have $h(x)\ne\min(h(S_x)^c)=:e$. If $h(x)<e$, then $h(x)\notin h(S_x)^c$, that is, $h(x)\in h(S_x)$, and we reach a contradiction as above. If $e<h(x)$, then $e=h(y)$ for some $y<x$, that is, $\min(h(S_x)^c)=e\in h(S_x)$, contradiction. 
+\noi(i) implies (ii'). We prove $h(S_x)\ne E$ by noting that $h(S_x)=E$ we would entail $h(x)=h(y)$ for some $y<x$, contradiction. To prove $h(x)=\min(h(S_x)^c)$, assume by contradiction that we have $h(x)\ne\min(h(S_x)^c)=:e$. If $h(x)<e$, then $h(x)\notin h(S_x)^c$, that is, $h(x)\in h(S_x)$, and we reach a contradiction as above. If $e<h(x)$, then $e=h(y)$ for some $y<x$, that is, $\min(h(S_x)^c)=e=h(y)\in h(S_x)$, contradiction. 
 
 \noi(ii') implies (i). We assume (ii'), and, in particular, that $h$ is weakly increasing. To show that $h$ is increasing, suppose $x<y$ and $h(x)=h(y)$ (we cannot have $h(x)>h(y)$ because $h$ is weakly increasing). Since $h(x)=h(y)=\min(h(S_y)^c)$, we have $h(x)\in h(S_y)^c$, but $h(x)\in h(S_y)$, contradiction. Finally, $h(J)$ is downward closed because $e<h(x)=\min(h(S_x)^c)$ implies $e\in h(S_x)\subset h(J)$. 
 
