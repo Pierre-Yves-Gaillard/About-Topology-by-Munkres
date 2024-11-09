@@ -1,13 +1,9 @@
-% munkres-a-c 1731152510 https://www.site24x7.com/tools/time-stamp-converter.html
-% https://docs.google.com/document/d/1Ix82_j1XLeXKhETXty0vdsDyu7fSOVl2SKo6uIfrlAY/edit?tab=t.0
+% munkres-a-c *** https://docs.google.com/document/d/1Ix82_j1XLeXKhETXty0vdsDyu7fSOVl2SKo6uIfrlAY/edit?tab=t.0 *** 1731157103 *** https://www.site24x7.com/tools/time-stamp-converter.html *** https://www.google.com/search?q=current+date+and+time 7:58 a.m. Saturday, November 9, 2024 (EST) Time in Montreal, QC *** https://www.overleaf.com/read/kdwwjvqjrzwb#9fe3a6 *** https://github.com/Pierre-Yves-Gaillard/About-Topology-by-Munkres *** https://latexonline.cc/ 
 % !TEX encoding = UTF-8 Unicode
-% https://www.google.com/search?q=current+date+and+time 6:42 a.m. Saturday, November 9, 2024 (EST) Time in Montreal, QC
 \documentclass[12pt,letterpaper]{article}
 \usepackage{fancyhdr}
 \fancyhf{}
-\fancyfoot[R]{{\tiny munkres-a-c,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1731152510}} % https://www.site24x7.com/tools/time-stamp-converter.html (https://www.unixtimestamp.com/ bad) 
-% https://www.overleaf.com/read/kdwwjvqjrzwb#9fe3a6 
-% https://github.com/Pierre-Yves-Gaillard/About-Topology-by-Munkres https://latexonline.cc/
+\fancyfoot[R]{{\tiny munkres-a-c,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1731157103}} % (https://www.unixtimestamp.com/ bad) 
 % LaTeX pense-bête https://docs.google.com/document/d/1kgwDp0rjOmd-9h5ryYvDeNTSUzUSdG13mo4ZNFToeYA/edit?tab=t.0
 \renewcommand{\headrulewidth}{0pt}
 \fancyfoot[C]{\thepage}
@@ -41,7 +37,7 @@
 Pierre-Yves Gaillard\footnote{ORCID https://orcid.org/0000-0002-7960-1698} 
 \end{center}%\centerline{Munkres}\bigskip % Some material was removed while passing from munkres-a-a to munkres-a-b. Link to munkres-a-a: https://docs.google.com/document/d/1AInZwQapnKWK62NshpdsJ7BJaCtnaj-JC1Wwl0cYaWA/edit?tab=t.0 - 1729512177
 
-\noi As the title indicates, we make a comments about the book \textbf{Topology} by James R. Munkres. This is a work in progress. The last version of this text is available here: \url{https://www.overleaf.com/read/kdwwjvqjrzwb#9fe3a6} Another version is available here: \url{https://github.com/Pierre-Yves-Gaillard/About-Topology-by-Munkres} \bigskip 
+\noi As the title indicates, we make a comments about the book \textbf{Topology} by James R. Munkres. This is a work in progress. The last version of this text is available here: \url{https://www.overleaf.com/read/kdwwjvqjrzwb#9fe3a6}. Another version is available here: \url{https://github.com/Pierre-Yves-Gaillard/About-Topology-by-Munkres} \bigskip 
 
 \hrule \bigskip
 
