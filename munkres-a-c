@@ -178,8 +178,6 @@ satisfying ($\ast$).
 \item[(e)] Prove the theorem.
 \end{enumerate} 
 
-%\newpage 
-
 \noi\textbf{Solution.} 
 
 \noi(a) Otherwise there would be a least $x$ such that $h(x)\ne k(x)$, we would get $h(S_x)=k(S_x)$, and $(*)$ would yield a contradiction. 
