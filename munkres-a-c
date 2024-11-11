@@ -1,15 +1,15 @@
 % munkres-a-c 
 % !TEX encoding = UTF-8 Unicode
 % https://docs.google.com/document/d/1Ix82_j1XLeXKhETXty0vdsDyu7fSOVl2SKo6uIfrlAY/edit?tab=t.0
-% https://www.site24x7.com/tools/time-stamp-converter.html 1731333012
+% https://www.site24x7.com/tools/time-stamp-converter.html 1731344183
 % https://www.google.com/search?q=current+date+and+time
-% 8:50 a.m. Monday, November 11, 2024 (EST) Time in Montreal, QC
+% 11:56 a.m. Monday, November 11, 2024 (EST) Time in Montreal, QC
 % https://www.overleaf.com/read/kdwwjvqjrzwb#9fe3a6
 % https://github.com/Pierre-Yves-Gaillard/About-Topology-by-Munkres
 \documentclass[12pt,letterpaper]{article}
 \usepackage{fancyhdr}
 \fancyhf{}
-\fancyfoot[R]{{\tiny munkres-a-c,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1731333012}} 
+\fancyfoot[R]{{\tiny munkres-a-c,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1731344183}} 
 %
 % https://latexonline.cc/ (doesn't work well; abandoned)
 % (https://www.unixtimestamp.com/ bad) 
@@ -427,6 +427,18 @@ where ``$i$ below $j$'' means ``$\T_i\subsetneq\T_j$''\footnote{I denote inclusi
 
 Preliminary comments: It is easy to see that the elements of $\T_\infty$ are $\varnothing$, the intervals $(-\infty,a)$, and $\R$, and to observe that $\T_\infty\cap\T_{fc}=\{\varnothing,\R\}$. It is also easy to compare the standard topology $\T_s$ to the others: the elements of $\T_{fc}$ and $\T_\infty$ are clearly open in $\R_s$, and it is plain that the intervals $(a,b)$ (which are the elements on $\B_s$) are open in $\R_K$ and in $\R_\infty$ (note that $(a,b)=\bigcup_{d<b}(a,d])$. Clearly, $(-1,1)\sm K\in\T_K$ and $(a,b]\in\T_u$ are not open in $\R_s$. Moreover $(2,3]$ is in $\T_u$ but not in $\T_K$. So, it only remains to prove $\T_K\subset\T_u$. 
 
-Let $x$ be in $(a,b)\sm K$. It suffices to show that there is a $c$ such that $x\in(c,x]\subset(a,b)\sm K$. If $x\le0$ we set $c:=a$. If $\frac1{n+1}<x<\frac1n$ we set $c:=\frac1{n+1}\,$. If $x>1$ we set $c:=\max(1,a)$. 
+Let $x$ be in $(a,b)\sm K$. It suffices to show that there is a $c$ such that $x\in(c,x]\subset(a,b)\sm K$. If $x\le0$ we set $c:=a$. If $\frac1{n+1}<x<\frac1n$ we set $c:=\frac1{n+1}\,$. If $x>1$ we set $c:=\max(1,a)$. \bigskip 
+
+\hrule \bigskip 
+
+\noi We give a slightly different proof of Theorem 17.2 p. 94 of the book. First recall the statement. 
+
+\begin{thm}[Theorem 17.2 p. 94 of the book] 
+Let $X$ be a topological space, $Y$ a subspace, and $A$ a subset of $Y$. Then $A$ is closed in $Y$ if and only $A=Y\cap C$ for some closed subset of $X$. 
+\end{thm} 
+
+\begin{proof} 
+It suffices to show that $Y\sm A=Y\cap U$, where $U$ is an open subset of $X$, if and only if $A=Y\cap(X\sm U)$. Hence it is enough to prove that we have $Y\sm(Y\cap U)=Y\cap(X\sm U)$, or equivalently $Y\sm U=Y\cap(X\sm U)$, for all subset $U$ of $X$. But this is clear. 
+\end{proof}
 
 \end{document}
