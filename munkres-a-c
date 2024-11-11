@@ -1,15 +1,15 @@
-% !TEX encoding = UTF-8 Unicode
 % munkres-a-c 
+% !TEX encoding = UTF-8 Unicode
 % https://docs.google.com/document/d/1Ix82_j1XLeXKhETXty0vdsDyu7fSOVl2SKo6uIfrlAY/edit?tab=t.0
-% https://www.site24x7.com/tools/time-stamp-converter.html 1731235663
+% https://www.site24x7.com/tools/time-stamp-converter.html 1731333012
 % https://www.google.com/search?q=current+date+and+time
-% 5:48 a.m. Sunday, November 10, 2024 (EST) Time in Montreal, QC
+% 8:50 a.m. Monday, November 11, 2024 (EST) Time in Montreal, QC
 % https://www.overleaf.com/read/kdwwjvqjrzwb#9fe3a6
 % https://github.com/Pierre-Yves-Gaillard/About-Topology-by-Munkres
 \documentclass[12pt,letterpaper]{article}
 \usepackage{fancyhdr}
 \fancyhf{}
-\fancyfoot[R]{{\tiny munkres-a-c,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1731235663}} 
+\fancyfoot[R]{{\tiny munkres-a-c,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1731333012}} 
 %
 % https://latexonline.cc/ (doesn't work well; abandoned)
 % (https://www.unixtimestamp.com/ bad) 
@@ -158,7 +158,7 @@ The book gives a detailed proof of the particular case when $\rho(h|{\{1,\ldots,
 \noi$\bullet$ \textbf{Exercise 10.7 p. 67.} Let $J$ be a well-ordered set. A subset $J_0$ of $J$ is said to be \textbf{inductive} if for every $\alpha \in J$,
 \[(S_\alpha \subset J_0) \Rightarrow \alpha \in J_0.\] 
 
-\begin{thm}[The principle of transfinite induction]
+\begin{thm}[The Principle of Transfinite Induction]\label{TPTI1}
 If $J$ is a well-ordered set and $J_0$ is an inductive subset of $J$, then $J_0 = J$. 
 \end{thm} 
 
@@ -210,7 +210,7 @@ where ``$x\ne\max(J)$'' means ``$x\ne\max(J)$ if $J$ has a maximum'', and $x+1$ 
 
 \noi$\bullet$ \textbf{Supplementary Exercise 11.1 p. 72.} 
 
-\begin{thm}[General principle of recursive definition]\label{TGPRD}
+\begin{thm}[General principle of recursive definition]\label{TGPRD1}
 Let $J$ be a well-ordered set; let $C$ be a set. Let $\mc F$ be the set of all functions mapping sections of $J$ into $C$.
 Given a function $\rho:\mc F\to C$, there exists a unique function $h:J\to C$ such
 that $h(\alpha)=\rho(h|S_\alpha)$ for each $\alpha\in J$. 
@@ -218,10 +218,54 @@ that $h(\alpha)=\rho(h|S_\alpha)$ for each $\alpha\in J$.
 
 \noi[Hint: Follow the pattern outlined in Exercise 10 of §10.] 
 
-\noi\textbf{Solution.} A close inspection of the solution to Exercise 10 of §10 reveals that the sole property of the element $c$ of $C$ defined by the equality $c:=\min(C\sm h(S_x))$ is that it depends only on the restriction $h|S_x$. This implies that, if, in the proof given by the book, we replace ``$\min(C\sm h(S_x))$'' with ``$\rho(h|S_x)$'', then we obtain a proof of Theorem~\ref{TGPRD}. %@@@
+\noi\textbf{Solution.} A close inspection of the solution to Exercise 10 of §10 reveals that the sole property of the element $c$ of $C$ defined by the equality $c:=\min(C\sm h(S_x))$ is that it depends only on the restriction $h|S_x$. This implies that, if, in the proof given by the book, we replace ``$\min(C\sm h(S_x))$'' with ``$\rho(h|S_x)$'', then we obtain a proof of Theorem~\ref{TGPRD1}. 
 
 \bigskip 
 
+\hrule \bigskip 
+
+\noi Here is a slightly different way of proving the General Principle of Recursive Definition. We state and prove Theorem~\ref{TGPTI} below, which we call General Principle of Transfinite Induction, and which generalizes both the usual Principle of Transfinite Induction (Exercise 10.7 p.~67 of the book and Theorem~\ref{TPTI1} p.~\pageref{TPTI1}. above) and the General Principle of Recursive Definition (Supplementary Exercise 1 p.~72 of the book and Theorem~\ref{TGPRD1} above). 
+
+For each ordered set $X$ and each $x$ in $X$ we denote the subset $\{y\in X\ |\ y<x\}$ by $X(x)$. (This is the so-called \emph{section by} $x$.) Let $X$ be a well-ordered set, let $A$ be a set, let 
+$$
+\rho:\bigcup_{x\in X}A^{X(x)}\to A,
+$$ 
+where $A^{X(x)}$ stands for the set of all maps from $X(x)$ to $A$. (Note that the sets $A^{X(x)}$ with $x$ in $X$ are disjoint.) 
+
+\begin{thm}[General Principle of Recursive Definition]\label{TGPRD2}
+There is a unique map $f:X\to A$ such that $f(x)=\rho(f|X(x))$ for all $x$ in $X$. 
+\end{thm} 
+
+The main ingredient to prove Theorem \ref{TGPRD2} is 
+
+\begin{thm}[General Principle of Transfinite Induction]\label{TGPTI}
+If $P(X)$ is a property that a well-ordered set $X$ may or may not have, and if $P(X)$ holds whenever $P(X(x))$ holds for all $x$ in $X$, then $P(X)$ holds for all well-ordered set $X$. 
+\end{thm} 
+
+Before proving Theorem \ref{TGPTI} recall the usual Principle of Transfinite Induction: 
+
+\begin{thm}[Principle of Transfinite Induction]\label{TPTI2} 
+Let $U$ be a well-ordered set. If $Q(u)$ is a property that an element $u$ of $U$ may or may not have, and if $Q(u)$ holds whenever $Q(v)$ holds for all $v<u$, then $Q(u)$ holds for all $u$ in $U$. 
+\end{thm} 
+
+This is Exercise 10.7 p. 67 of the book. 
+
+\begin{proof}[Proof of Theorem \ref{TGPTI}] 
+Let $X$ be a well-ordered set. We assume that $P(X)$ holds whenever $P(X(x))$ holds for all $x$ in $X$, and we want to prove $P(X)$. Let $\mc D$ be the set of all downward closed subsets of $X$. Then we have $\mc D=\{X(x)\ |\ x\in X\}\cup\{X\}$, and $X(x)\subsetneq X(y)$ if and only if $x<y$, and $X(x)\subsetneq X$ for all $x$, and $\mc D$ is well-ordered by proper inclusion. We want to apply the Principle of Transfinite Induction (Theorem~\ref{TPTI2}). To this end we set $U:=\mc D$ and, for $D\in\mc D$ we define $Q(D)$ as being $P(D)$. Then Theorem~\ref{TPTI2} tells us that $P(D)$ holds for all $D$ in $\mc D$, and thus in particular for $D=X\in\mc D$. 
+\end{proof} 
+
+\begin{proof}[Proof of Theorem \ref{TGPRD2}] 
+We denote the statement of Theorem \ref{TGPRD2} by $P(X)$, and we want to apply Theorem~\ref{TGPTI}. So we assume that $P(X(x))$ holds for all $x$ in $X$. It suffices to prove $P(X)$. 
+
+Case 1: $X$ has a largest element $\infty\in X$. By assumption, for all $x<\infty$ there is a unique map $f_x:X(x)\to A$ such that $f(y)=\rho(f|X(y))$ for all $y<x$. It is easy to check that each $f_x$ is the restriction of $f_\infty$ to $X(x)$, and that, if we define $f:X\to A$ by $f(\infty):=\rho(f_\infty)$ and $f(x):=f_\infty(x)$ if $x<\infty$, then $f$ is the unique solution to our problem. 
+
+Case 2: $X=\bigcup_{x\in X}X(x)$. We have maps $f_x:X(x)\to A$ as above, and it is easy to check that that map $f:X\to A$ defined by $f(x):=f_{x+1}(x)$, where $x+1$ is the successor of $x$, is the unique solution to our problem. 
+\end{proof} 
+
+To see why the General Principle of Transfinite Induction (Theorem~\ref{TGPTI}) generalizes the Principle of Transfinite Induction (Theorem~\ref{TPTI2}), note that we can define $P(X)$ in terms of the $Q(u)$ by decreeing the $P(X)$ holds if and only if 
+$$
+\Big((\exists\ u\in U)\ \big(X=U(u)\big)\Big)\implies Q(u).
+$$ 
 \hrule \bigskip 
 
 \noi$\bullet$ \textbf{Supplementary Exercise 11.2 p. 72.} 
