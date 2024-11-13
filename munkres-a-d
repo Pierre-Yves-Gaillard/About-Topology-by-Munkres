@@ -1,15 +1,15 @@
-% munkres-a-d
+% munkres-a-d 
 % !TEX encoding = UTF-8 Unicode
 % https://docs.google.com/document/d/1horMi42ZUwfqSHYqzaruV6H4BILTRgvTpwe9tC0uGRg/edit?tab=t.0
-% https://www.site24x7.com/tools/time-stamp-converter.html 1731504805
+% https://www.site24x7.com/tools/time-stamp-converter.html 1731507450
 % https://www.google.com/search?q=current+date+and+time
-% 8:33 a.m. Wednesday, November 13, 2024 (EST) Time in Montreal, QC
+% 9:17 a.m. Wednesday, November 13, 2024 (EST) Time in Montreal, QC
 % https://www.overleaf.com/read/kdwwjvqjrzwb#9fe3a6
 % https://github.com/Pierre-Yves-Gaillard/About-Topology-by-Munkres
 \documentclass[12pt,letterpaper]{article}
 \usepackage{fancyhdr}
 \fancyhf{}
-\fancyfoot[R]{{\tiny munkres-a-d,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1731504805}} 
+\fancyfoot[R]{{\tiny munkres-a-d,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1731507450}} 
 %
 % https://latexonline.cc/ (doesn't work well; abandoned)
 % (https://www.unixtimestamp.com/ bad) 
@@ -499,6 +499,8 @@ Let $X$ be a topological space, $Y$ a subspace, and $A$ a subset of $Y$. Then $A
 \begin{proof} 
 It suffices to show that $Y\sm A=Y\cap U$, where $U$ is an open subset of $X$, if and only if $A=Y\cap(X\sm U)$. Hence it is enough to prove that we have $Y\sm(Y\cap U)=Y\cap(X\sm U)$, or equivalently $Y\sm U=Y\cap(X\sm U)$, for all subset $U$ of $X$. But this is clear. 
 \end{proof}
+
+\end{document}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \hs
 
