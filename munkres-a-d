@@ -1,15 +1,15 @@
 % munkres-a-d 
 % !TEX encoding = UTF-8 Unicode
 % https://docs.google.com/document/d/1horMi42ZUwfqSHYqzaruV6H4BILTRgvTpwe9tC0uGRg/edit?tab=t.0
-% https://www.site24x7.com/tools/time-stamp-converter.html 1731507450
+% https://www.site24x7.com/tools/time-stamp-converter.html 1731510330
 % https://www.google.com/search?q=current+date+and+time
-% 9:17 a.m. Wednesday, November 13, 2024 (EST) Time in Montreal, QC
+% 10:05 a.m. Wednesday, November 13, 2024 (EST) Time in Montreal, QC
 % https://www.overleaf.com/read/kdwwjvqjrzwb#9fe3a6
 % https://github.com/Pierre-Yves-Gaillard/About-Topology-by-Munkres
 \documentclass[12pt,letterpaper]{article}
 \usepackage{fancyhdr}
 \fancyhf{}
-\fancyfoot[R]{{\tiny munkres-a-d,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1731507450}} 
+\fancyfoot[R]{{\tiny munkres-a-d,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1731510330}} 
 %
 % https://latexonline.cc/ (doesn't work well; abandoned)
 % (https://www.unixtimestamp.com/ bad) 
@@ -500,24 +500,37 @@ Let $X$ be a topological space, $Y$ a subspace, and $A$ a subset of $Y$. Then $A
 It suffices to show that $Y\sm A=Y\cap U$, where $U$ is an open subset of $X$, if and only if $A=Y\cap(X\sm U)$. Hence it is enough to prove that we have $Y\sm(Y\cap U)=Y\cap(X\sm U)$, or equivalently $Y\sm U=Y\cap(X\sm U)$, for all subset $U$ of $X$. But this is clear. 
 \end{proof}
 
-\end{document}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\hs
+\hrule\medskip
 
 \noi\textbf{Theorem 17.4 p. 95 of the book.} Recall the statement: 
 
 \begin{thm}[Theorem 17.4 p. 95 of the book] 
-Let $X$ be a topological space, $Y$ a subspace, and $A$ a subset of $Y$. Then $A$ is closed in $Y$ if and only $A=Y\cap\overline A$, where $\overline A$ is the closure of $A$ in $X$.
+Let $X$ be a topological space, $Y$ a subspace, and $A$ a subset of $Y$. Then the closure $\overline A^Y$ of $A$ in $Y$ equals $\overline A\cap Y$, where $\overline A$ is the closure of $A$ in $X$.
 \end{thm} 
 
 Here is a slightly different proof. 
 
 \begin{proof} 
-Let $C$ be as in Theorem~\ref{T17.2}. We have $A\subset C$, hence $A\subset\overline A\subset C$, hence 
+Set 
 $$
-A=Y\cap A\subset Y\cap\overline A\subset Y\cap C=A,
+\mc B=\{B\ |\ B\text{ closed in }Y,\ B\supset A\}.
 $$ 
-hence $A=Y\cap\overline A$. 
+For all $B$ in $\mc B$ put 
+$$
+\mc C(B)=\{C\ |\ C\text{ closed in }X,\ C\supset B\}.
+$$ 
+Finally write 
+$$
+\mc C=\{C\ |\ C\text{ closed in }X,\ C\supset A\}.
+$$ 
+We get 
+$$
+\mc C=\bigcup_{B\in\mc B}\mc C(B)
+$$ 
+and 
+$$
+\overline A^Y=\bigcap_{B\in\mc B}B=\bigcap_{B\in\mc B}\bigcap_{C\in\mc C(B)}(Y\cap C)=\bigcap_{C\in\mc C}(Y\cap C)=Y\cap\bigcap_{C\in\mc C}C=Y\cap\overline A.
+$$ 
 \end{proof}
 
 \end{document}
