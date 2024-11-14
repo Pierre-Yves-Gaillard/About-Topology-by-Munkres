@@ -1,15 +1,15 @@
 % munkres-a-d 
 % !TEX encoding = UTF-8 Unicode
 % https://docs.google.com/document/d/1horMi42ZUwfqSHYqzaruV6H4BILTRgvTpwe9tC0uGRg/edit?tab=t.0
-% https://www.site24x7.com/tools/time-stamp-converter.html 1731510330
+% https://www.site24x7.com/tools/time-stamp-converter.html 1731595085
 % https://www.google.com/search?q=current+date+and+time
-% 10:05 a.m. Wednesday, November 13, 2024 (EST) Time in Montreal, QC
+% ???
 % https://www.overleaf.com/read/kdwwjvqjrzwb#9fe3a6
 % https://github.com/Pierre-Yves-Gaillard/About-Topology-by-Munkres
 \documentclass[12pt,letterpaper]{article}
 \usepackage{fancyhdr}
 \fancyhf{}
-\fancyfoot[R]{{\tiny munkres-a-d,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1731510330}} 
+\fancyfoot[R]{{\tiny munkres-a-d,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1731595085}} 
 %
 % https://latexonline.cc/ (doesn't work well; abandoned)
 % (https://www.unixtimestamp.com/ bad) 
@@ -394,17 +394,19 @@ This shows that the choice axiom implies the well-ordering theorem. The converse
 
 \noi\textbf{Lemma 13.1 p. 80 of the book.} Recall the statement: 
 
-\begin{lem}[Lemma 13.1 p. 80 of the book]
+\begin{lem}[Lemma 13.1 p. 80 of the book]\label{L13.1}
 Let $X$ be a set; let $\mathcal{B}$ be a basis for a topology $\mathcal{T}$ on $X$. Then $\mathcal{T}$ equals the collection of all unions of elements of $\mathcal{B}$.
 \end{lem}
 
 Here is the proof given in the book: 
 
 \begin{proof}
-Given a collection of elements of $\mathcal{B}$, they are also elements of $\mathcal{T}$. Because $\mathcal{T}$ is a topology, their union is in $\mathcal{T}$. Conversely, given $U \in \mathcal{T}$, choose for each $x \in U$ an element $B_x$ of $\mathcal{B}$ such that $x \in B_x \subset U$. Then $U = \bigcup_{x\in U} B_x$, so $U$ equals a union of elements of $\mathcal{B}$.
+Given a collection of elements of $\mathcal{B}$, they are also elements of $\mathcal{T}$. Because $\mathcal{T}$ is a topology, their union is in $\mathcal{T}$. Conversely, given $U \in \mathcal{T}$, choose for each $x\in U$ an element $B_x$ of $\mathcal{B}$ such that $x\in B_x \subset U$. Then $U=\bigcup_{x\in U}B_x$, so $U$ equals a union of elements of $\mathcal{B}$.
 \end{proof} 
 
-To avoid the Axiom of Choice, just replace $U = \bigcup_{x\in U} B_x$ with $U = \bigcup_{B\subset U} B$, where the union runs over the $B\in\mc B$ such that $B\subset U$. 
+To avoid the Axiom of Choice when showing that $U \in \mathcal{T}$ is a union of elements of $\mathcal{B}$, just note that $U$ is the union of all those $B$ in $\mc B$ which are contained in  $U$. 
+
+%This kind of unnecessary use of the Axiom of Choice occurs several times in the book. To avoid repetitions we state the following Lemma. \begin{lem}[Avoiding the Axiom of Choice]\label{LAOC}Let $X$ be a topological space, $A$ a subset. Then $A$ is open if and only if for all $x$ in $A$ there is an open subset $U$ such that $x\in U\subset A$. \end{lem} 
 
 \hs
 
@@ -532,5 +534,70 @@ $$
 \overline A^Y=\bigcap_{B\in\mc B}B=\bigcap_{B\in\mc B}\bigcap_{C\in\mc C(B)}(Y\cap C)=\bigcap_{C\in\mc C}(Y\cap C)=Y\cap\bigcap_{C\in\mc C}C=Y\cap\overline A.
 $$ 
 \end{proof}
+
+\hrule\medskip
+
+\noi\textbf{Theorem 17.6 p. 97 of the book.} Recall the statement: % variant https://docs.google.com/document/d/17l98t_t6zXfymBp91exwc1XqfGgzNXKYvZzOtOorNFg/edit?tab=t.0
+
+\begin{thm}[Theorem 17.6 p. 97 of the book]%\label{T17.6} 
+Let $A$ be a subset of the topological space $X$; let $A'$ be the set of all limit points of $A$. Then $\overline A=A\cup A'$. 
+\end{thm} 
+
+Here is a slightly different proof. 
+
+\begin{proof}
+In this proof we denote the closure $\overline B$ of a subset $B$ of $X$ by $B^-$. To show $A'\subset A^-$, note that if $x$ is in $A'$, then $x$ is in $(A\sm\{x\})^-\subset A^-$. It only remains to prove $A^-\subset A\cup A'$. Assume by contradiction that there is an $x$ in $A^-$ which is not in $A\cup A'$. We have in particular $x\notin(A\sm\{x\})^-$, that is, $x\in U:=X\sm(A\sm\{x\})^-$ with $U$ open. The fact that $x$ is in $\overline A$ implies that $U$ intersects $A$. Let $a$ be such an intersection point. Since $x$ is not in $A$ but $a$ is, we have $a\ne x$, hence $a$ is in $A\sm\{x\}$, which is disjoint from $U$, contradiction. 
+\end{proof} 
+
+\hrule\medskip
+
+\noi\textbf{Theorem 17.8 p. 99 of the book.} Recall the statement: 
+
+\begin{thm}[Theorem 17.8 p. 99 of the book]%\label{T17.8} 
+Every finite point set in a Hausdorff space $X$ is closed.
+\end{thm} 
+
+Here is a slightly different proof. 
+
+\begin{proof}
+Let $x_0$ be a point of $X$, let $\mc U$ be the set of all those open subsets of $X$ which do not contain $x_0$, let $U$ be the union of the members of $\mc U$, and let $x$ be in $X\sm\{x_0\}$. It suffices to show that $x\in U$, that is, $x\in V$ for some $V$ in $\mc U$, which is clear. 
+\end{proof} 
+
+\hrule\medskip
+
+\noi\textbf{Theorem 17.9 p. 99 of the book.} Recall the statement: 
+
+\begin{thm}[Theorem 17.8 p. 99 of the book]%\label{T17.9} 
+Let $X$ be a space satisfying the $T_1$ axiom; let $A$ be a subset of $X$. Then the point $x$ is a limit point of $A$ if and only if every neighborhood of $x$ contains infinitely many points of $A$.
+\end{thm} 
+
+Here is a slightly different proof. 
+
+\begin{proof}
+It suffices to show that the following two conditions are equivalent: 
+
+(1) there is a neighborhood $U$ of $x$ such that $U\cap A=\{x\}$, 
+
+(2) there is a neighborhood $V$ of $x$ such that $V\cap A$ is finite. 
+
+\noi Clearly (1) implies (2). To prove the converse it suffices to set $U:=(V\sm A)\cup\{x\}$. (Since $X$ is $T_1$, the subset $V$, being obtained from $U$ by removing finitely many points, is open.) 
+\end{proof} 
+
+\hrule\medskip
+
+\noi\textbf{Theorem 18.1 p. 104 of the book.} Recall the statement:
+
+\begin{thm}
+Let $X$ and $Y$ be topological spaces; let $f: X \to Y$. Then the following are equivalent:
+\begin{itemize}
+    \item[$(1)$] $f$ is continuous.
+    \item[$(2)$] For every subset $A$ of $X$, one has $f(\overline{A}) \subset \overline{f(A)}$.
+    \item[$(3)$] For every closed set $B$ of $Y$, the set $f^{-1}(B)$ is closed in $X$.
+    \item[$(4)$] For each $x \in X$ and each neighborhood $V$ of $f(x)$, there is a neighborhood $U$ of $x$ such that $f(U) \subset V$.
+\end{itemize}
+If the condition in $(4)$ holds for the point $x$ of $X$, we say that $f$ is \textbf{continuous at the point} $x$.
+\end{thm} % variant https://docs.google.com/document/d/1I1JMPqDsBb9GX9Z7pExBEbHFRrgRjV5s89uDdqfRX3E/edit?tab=t.0
+
+The proof that (4) implies (1) is written as follows: ``Let $V$ be an open set of $Y$; let $x$ be a point of $f^{-1}(V)$. Then $f(x) \in V$, so that by hypothesis there is a neighborhood $U_x$ of $x$ such that $f(U_x) \subset V$. Then $U_x \subset f^{-1}(V)$. It follows that $f^{-1}(V)$ can be written as the union of the open sets $U_x$, so that it is open.'' One can avoid using the Axiom of Choice by the following wording: $f^{-1}(V)$ can be written as the union of the open sets $U$ such that $x\in U\subset f^{-1}(V)$, so that it is open. (A similar comment was made after Lemma~\ref{L13.1}.) 
 
 \end{document}
