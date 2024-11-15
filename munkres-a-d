@@ -1,7 +1,7 @@
 % munkres-a-d 
 % !TEX encoding = UTF-8 Unicode
 % https://docs.google.com/document/d/1horMi42ZUwfqSHYqzaruV6H4BILTRgvTpwe9tC0uGRg/edit?tab=t.0
-% https://www.site24x7.com/tools/time-stamp-converter.html 1731595085
+% https://www.site24x7.com/tools/time-stamp-converter.html 1731680807
 % https://www.google.com/search?q=current+date+and+time
 % ???
 % https://www.overleaf.com/read/kdwwjvqjrzwb#9fe3a6
@@ -9,7 +9,7 @@
 \documentclass[12pt,letterpaper]{article}
 \usepackage{fancyhdr}
 \fancyhf{}
-\fancyfoot[R]{{\tiny munkres-a-d,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1731595085}} 
+\fancyfoot[R]{{\tiny munkres-a-d,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1731680807}} 
 %
 % https://latexonline.cc/ (doesn't work well; abandoned)
 % (https://www.unixtimestamp.com/ bad) 
@@ -252,7 +252,7 @@ Let $U$ be a well-ordered set. If $Q(u)$ is a property that an element $u$ of $U
 This is Exercise 10.7 p. 67 of the book. 
 
 \begin{proof}[Proof of Theorem \ref{TGPTI}] 
-Let $X$ be a well-ordered set. We assume that $P(X)$ holds whenever $P(X(x))$ holds for all $x$ in $X$, and we want to prove $P(X)$. Let $\mc D$ be the set of all downward closed subsets of $X$. Then we have $\mc D=\{X(x)\ |\ x\in X\}\cup\{X\}$, and $X(x)\subsetneq X(y)$ if and only if $x<y$, and $X(x)\subsetneq X$ for all $x$, and $\mc D$ is well-ordered by proper inclusion. We want to apply the Principle of Transfinite Induction (Theorem~\ref{TPTI2}). To this end we set $U:=\mc D$ and, for $D\in\mc D$ we define $Q(D)$ as being $P(D)$. Then Theorem~\ref{TPTI2} tells us that $P(D)$ holds for all $D$ in $\mc D$, and thus in particular for $D=X\in\mc D$. 
+Let $X$ be a well-ordered set. We assume that $P(X)$ holds whenever $P(X(x))$ holds for all $x$ in $X$, and we want to prove $P(X)$. Let $\mc D$ be the set of all downward closed subsets of $X$. Then we have $\mc D=\{X(x)\ |\ x\in X\}\cup\{X\}$, and $X(x)\subsetneqq X(y)$ if and only if $x<y$, and $X(x)\subsetneqq X$ for all $x$, and $\mc D$ is well-ordered by proper inclusion. We want to apply the Principle of Transfinite Induction (Theorem~\ref{TPTI2}). To this end we set $U:=\mc D$ and, for $D\in\mc D$ we define $Q(D)$ as being $P(D)$. Then Theorem~\ref{TPTI2} tells us that $P(D)$ holds for all $D$ in $\mc D$, and thus in particular for $D=X\in\mc D$. 
 \end{proof} 
 
 \begin{proof}[Proof of Theorem \ref{TGPRD2}] 
@@ -323,7 +323,7 @@ Claims 1 and 2 imply $h(x)=\min(h(S_x)^c)$ for all $x$, hence $h$ is increasing 
 
 \noi\textbf{Solution.} (a) For any element $x$ of any ordered set $X$, let $X_{<x}$ denote the corresponding section, and let us set $X_{<\infty}:=X$. Let $C$ be the well-ordered set containing both $A$ and $B$, described in Exercise~8 of §10, and let $k:A\to C$ and $\ell:B\to C$ be the natural increasing maps. By the previous Exercise, we have isomorphisms $A\simeq C_{<x}$ and $B\simeq C_{<y}$ for some $x$ and $y$ in $C\cup\{\infty\}$. We can assume $x\le y$. Then $x=y$ implies $A\simeq B$. If $x<y$, we get 
 $$
-A\simeq C_{<x}=(C_{<y})_{<x}\subsetneq C_{<y}\simeq B.
+A\simeq C_{<x}=(C_{<y})_{<x}\subsetneqq C_{<y}\simeq B.
 $$ 
 This implies $A\simeq B_{<b}$ for some $b$ in $B$. The fact that the various cases are exclusive follows from Supplementary Exercise 11.2b. 
 
@@ -441,7 +441,7 @@ $$
 fc&&\infty,
 \end{matrix}
 $$ 
-where ``$i$ below $j$'' means ``$\T_i\subsetneq\T_j$''\footnote{I denote inclusion by $\subset$ and proper inclusion by $\subsetneq$. I know that, in some sense, it would be more coherent to use $\subseteq$ for inclusion, but I prefer to do it that way, and hope the reader will not be confused.}, and ``$i$ and $j$ on the same level'' means ``$\T_i$ and $\T_j$ are incomparable''. 
+where ``$i$ below $j$'' means ``$\T_i\subsetneqq\T_j$'', and ``$i$ and $j$ on the same level'' means ``$\T_i$ and $\T_j$ are incomparable''. 
 
 Preliminary comments: It is easy to see that the elements of $\T_\infty$ are $\varnothing$, the intervals $(-\infty,a)$, and $\R$, and to observe that $\T_\infty\cap\T_{fc}=\{\varnothing,\R\}$. It is also easy to compare the standard topology $\T_s$ to the others: the elements of $\T_{fc}$ and $\T_\infty$ are clearly open in $\R_s$, and it is plain that the intervals $(a,b)$ (which are the elements on $\B_s$) are open in $\R_K$ and in $\R_\infty$ (note that $(a,b)=\bigcup_{d<b}(a,d])$. Clearly, $(-1,1)\sm K\in\T_K$ and $(a,b]\in\T_u$ are not open in $\R_s$. Moreover $(2,3]$ is in $\T_u$ but not in $\T_K$. So, it only remains to prove $\T_K\subset\T_u$. 
 
