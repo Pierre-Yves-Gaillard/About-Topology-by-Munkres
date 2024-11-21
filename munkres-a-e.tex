@@ -1,0 +1,720 @@
+% munkres-a-e 
+% !TEX encoding = UTF-8 Unicode
+% https://docs.google.com/document/d/1ggGZML_7mP6YBbQ7vZybQTcZ91Eb7HESuhqzNPRQlw8/edit?tab=t.0
+% https://www.site24x7.com/tools/time-stamp-converter.html 1732189905
+% https://www.overleaf.com/read/kdwwjvqjrzwb#9fe3a6
+% https://github.com/Pierre-Yves-Gaillard/About-Topology-by-Munkres
+\documentclass[12pt,letterpaper]{article}
+\usepackage{fancyhdr}
+\fancyhf{}
+\fancyfoot[R]{{\tiny munkres-a-e,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1732189905}} 
+%
+% https://latexonline.cc/ (doesn't work well; abandoned) - https://www.google.com/search?q=current+date+and+time
+% (https://www.unixtimestamp.com/ bad) 
+% LaTeX pense-bête https://docs.google.com/document/d/1kgwDp0rjOmd-9h5ryYvDeNTSUzUSdG13mo4ZNFToeYA/edit?tab=t.0
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\thepage}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb,amsmath,amsthm} 
+\usepackage[letterpaper,top=50pt,left=60pt,right=60pt,bottom=80pt]{geometry}
+\usepackage{filemod}%https://stackoverflow.com/questions/2118972/latex-command-for-last-modified
+\usepackage{microtype}
+%\usepackage{comment}
+\usepackage[pdfusetitle]{hyperref}%\texorpdfstring{$\boldsymbol{\tau_2}$}{tau2}
+%\usepackage{marvosym}%\usepackage{showkeys}%\usepackage{showlabels}
+\pagestyle{fancy}
+%\pagestyle{empty}
+\setlength{\parskip}{5pt} % variable
+%\renewcommand{\baselinestretch}{1.1} % variable
+\newtheorem{thm}{Theorem}%[section]
+%\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newcommand{\B}{\mathcal B}
+\newcommand{\hs}{\bigskip\hrule\medskip}
+\newcommand{\mc}{\mathcal}
+\newcommand{\noi}{\noindent}%
+\newcommand{\Q}{\mathbb Q}%
+\newcommand{\sm}{\setminus}
+\newcommand{\R}{\mathbb R}
+\newcommand{\T}{\mathcal T}
+\newcommand{\Z}{\mathbb Z}
+\begin{document}% \tiny \scriptsize \footnotesize \small \normalsize \large \Large \LARGE \huge \Huge 
+\begin{center}{\Huge A few comments about ``Topology'' by Munkres}\bigskip 
+
+Pierre-Yves Gaillard\footnote{ORCID https://orcid.org/0000-0002-7960-1698} 
+\end{center}%\centerline{Munkres}\bigskip % Some material was removed while passing from munkres-a-a to munkres-a-b. Link to munkres-a-a: https://docs.google.com/document/d/1AInZwQapnKWK62NshpdsJ7BJaCtnaj-JC1Wwl0cYaWA/edit?tab=t.0 - 1729512177
+
+\tableofcontents\bigskip
+
+\noi As the title indicates, we make a comments about the book \textbf{Topology} by James R. Munkres. This is a work in progress. The last version of this text is available here: \url{https://www.overleaf.com/read/kdwwjvqjrzwb#9fe3a6}. Another version is available here: \url{https://github.com/Pierre-Yves-Gaillard/About-Topology-by-Munkres}. 
+
+\section{Chapter 1. Set Theory and Logic}
+
+\noi$\bullet$ \textbf{Definition of $\R$ p. 31.} The object $\R$ is defined by assuming that there exists a set $\R$ having certain properties. We take this assumption for granted. Then it is easy to see that there are several sets having these properties. So, let $\R'$ be a set having the same properties as $\R$. Let $\Z_+',\Z'$ and $\Q'$ be to $\R'$ what $\Z_+,\Z$ and $\Q$ are to $\R$. 
+
+\begin{thm}\label{Tumf}
+There is a unique morphism of fields from $f:\R\to\R'$. This morphism is an isomorphism of ordered fields, and it induces isomorphisms $\Z_+\to\Z_+',\Z\to\Z'$ and $\Q\to\Q'$. 
+\end{thm}
+
+\begin{lem}\label{Lgh}
+There is a unique map $g:\Z_+\to\Z_+'$ such that $g(0)=0$ and $g(n+1)=g(n)+1$ for all $n$ in $\Z_+$. Similarly, there is a unique map $h:\Z_+'\to\Z_+$ such that $h(0)=0$ and $h(n+1)=h(n)+1$ for all $n$ in $\Z_+'$. 
+\end{lem}
+
+\begin{proof} 
+For $i\in\Z_+$ and $\varphi:\{1,\ldots,i\}\to\Z_+'$ define $\rho(\varphi)\in\Z_+'$ by $\rho(\varphi):=\varphi(i)+1$. Then the first statement follows from the Principle of Recursive Definition (Theorem~\ref{TPRD} p.~\pageref{TPRD}). The proof of the second statement is similar. 
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{Tumf}] 
+In the notation of Lemma \ref{Lgh}, set $u:=h\circ g$. Then $u:\Z_+\to\Z_+$ satisfies $u(0)=0$ and $u(n+1)=u(n)+1$ for all $n$ in $\Z_+$. One can easily prove that $u(n)=n$ by induction. The same argument works for $g\circ h$. This shows that $g:\Z_+\to\Z_+'$ and $h:\Z_+'\to\Z_+$ are inverse isomorphisms. Then we extend $g$ to morphisms $\Z\to\Z'$ and $\Q\to\Q'$, and similarly for $h$, and, arguing as before, we show that these morphisms are isomorphisms. More precisely, we see that there is a unique morphism $\Z\to\Z'$ extending $g$, and that this morphism is an isomorphism, and similarly for the morphism $\Q\to\Q'$. So we can make the identifications $\Z_+=\Z_+',\Z=\Z',\Q=\Q'$. To show that there is a unique morphism of fields $\R\to\R'$, and that this morphism is an isomorphism (inducing the identity of $\Q$), we argue as in Section \emph{Appendix to Chapter~1} in \emph{A few comments about ``Principles of Mathematical Analysis'' by Rudin}, available at \url{https://zenodo.org/records/13955297}. 
+\end{proof} \smallskip
+
+\hrule\medskip
+
+\noi\textbf{Theorem 7.8. p. 50 of the book.} Recall the statement: 
+
+\begin{thm}[Theorem 7.8. p. 50 of the book]
+Let $A$ be a set. There is no injective map $f : \mathcal{P}(A) \to A$, and there is no surjective map $g : A \to \mathcal{P}(A)$.
+\end{thm} 
+
+Here is my favourite way of phrasing the argument showing that there is no surjective map $g : A \to \mathcal{P}(A)$. Let $g : A \to \mathcal{P}(A)$ be a map, and set $B:=\{a\mid a\notin g(a)\}$, so that we have, for all $a$ in $A$, 
+$$
+a\in B\iff a\notin g(a).
+$$ 
+Let $a_0$ be in $A$. If we had $g(a_0)=B$, we would get, for all $a$ in $A$, 
+$$
+a\in g(a_0)\iff a\notin g(a),
+$$ 
+and we immediately that setting $a:=a_0$ yields a contradiction. This shows that $B$ is not in the range of $g$. 
+
+\hs
+
+\noi$\bullet$ \textbf{Exercise 7.6. p. 51 of the book.} We say that two sets $A$ and $B$ \textbf{have the same cardinality} if there is a bijection of $A$ with $B$.
+
+\begin{enumerate}
+    \item[(a)] Show that if $B \subset A$ and if there is an injection
+    \[
+    f: A \to B,
+    \]
+    then $A$ and $B$ have the same cardinality. [Hint: Define $A_1 = A, B_1 = B$, and for $n > 1$, $A_n = f(A_{n-1})$ and $B_n = f(B_{n-1})$. (Recursive definition again!) Note that $A_1 \supset B_1 \supset A_2 \supset B_2 \supset A_3 \supset \cdots$ Define a bijection $h: A \to B$ by the rule
+    \[
+    h(x) = \begin{cases} 
+    f(x) & \text{if } x \in A_n\sm B_n \text{ for some } n, \\
+    x & \text{otherwise}.]
+    \end{cases}
+    \]
+    \item[(b)] \textit{Theorem (Schroeder-Bernstein theorem).} If there are injections $f: A \to C$ and $g: C \to A$, then $A$ and $C$ have the same cardinality.
+\end{enumerate} 
+
+\noi\textbf{Solution.} (a) We will freely use the following two obvious facts: 
+
+(F1) For $x\in A$ and $n\in\Z_+$ we have 
+$$
+x\in A_n\iff f(x)\in A_{n+1}\text{ and }x\in B_n\iff f(x)\in B_{n+1}.
+$$ 
+
+(F2) We have $\bigcap_{n\ge1}A_n=\bigcap_{\ge1}B_n=:I$. 
+
+\noi Setting $A_n':=A_n\sm B_n,B_n':=B_n\sm A_{n+1}$, we get 
+$$
+A=\left(\bigcup_{n\ge1}A_n'\right)\cup\left(\bigcup_{n\ge1}B_n'\right)\cup I,
+$$ 
+and this union is disjoint. We also have 
+$$
+B=\left(\bigcup_{n\ge2}A_n'\right)\cup\left(\bigcup_{n\ge1}B_n'\right)\cup I.
+$$ 
+The injection $f$ induces bijections $f_n:A_n'\to A_{n+1}'$ (here we are using (F1)). To define a bijection $h:A\to B$, it suffices to define three bijections 
+$$
+u:\bigcup_{n\ge1}A_n'\to\bigcup_{n\ge2}A_n',\quad v:\bigcup_{n\ge1}B_n'\to\bigcup_{n\ge1}B_n',\quad w:I\to I.
+$$ 
+We define $u$ by $u(x)=f_n(x)$ if $x\in A_n'$, and take $v$ and $w$ to be the identity maps. 
+
+\noi(b) We set $B:=g(C)\subset A$ and define $f':A\to B$ by $f'(a):=g(f(a))$. Then $f':A\to B$ satisfies the assumptions for $f:A\to B$ in (a). 
+
+\hs 
+
+\noi$\bullet$ \textbf{Exercise 8.7. p. 56 of the book.} Prove Theorem 8.4 p. 54. 
+
+\noi\textbf{Solution.} Recall the statement of Theorem~8.4. 
+
+\begin{thm}[Principle of Recursive Definition, Theorem 8.4 of the book]\label{TPRD}
+Let $A$ be a set; let $a_0$ be an element of $A$. Suppose $\rho$ is a function that assigns, to each function $f$ mapping a nonempty section of the positive integers into $A$, an element of $A$. Then there exists a unique function
+\[h: \mathbb{Z}^+ \to A\]
+such that
+\[
+\begin{aligned}
+h(1) &= a_0,\\
+h(i) &= \rho(h|{\{1,\ldots,i-1\}}) \text{ for } i > 1.
+\end{aligned}
+\tag{$*$}
+\]
+\end{thm}
+
+The formula $(*)$ is called a recursion formula for $h$. It specifies $h(1)$, and it expresses the value of $h$ at $i > 1$ in terms of the values of $h$ for positive integers less than $i$. 
+
+The book gives a detailed proof of the particular case when $\rho(h|{\{1,\ldots,i-1\}})$ is equal to $\min(C\sm h(\{1,\ldots,i-1\}))$, where ``$\min$'' means ``\emph{minimum}'', and $C$ is an infinite set. A close inspection of this proof reveals that the sole property of the element $c$ of $C$ defined by the equality $c:=\min(C\sm h(\{1,\ldots,i-1\}))$ is that it depends only on the restriction $h|{\{1,\ldots,i-1\}}$. This implies that, if, in the proof given by the book, we replace ``$\min(C\sm h(\{1,\ldots,i-1\}))$'' with ``$\rho(h|{\{1,\ldots,i-1\}})$'', then we obtain a proof of Theorem~\ref{TPRD}. 
+
+\hs
+
+\noi$\bullet$ \textbf{Exercise 10.7 p. 67.} Let $J$ be a well-ordered set. A subset $J_0$ of $J$ is said to be \textbf{inductive} if for every $\alpha \in J$,
+\[(S_\alpha \subset J_0) \Rightarrow \alpha \in J_0.\] 
+
+\begin{thm}[The Principle of Transfinite Induction]\label{TPTI1}
+If $J$ is a well-ordered set and $J_0$ is an inductive subset of $J$, then $J_0 = J$. 
+\end{thm} 
+
+\noi\textbf{Solution.} If $J_0\ne J$, let $\alpha$ be the least element of $J\sm J_0$. We get $S_\alpha \subset J_0$, and thus $\alpha \in J_0$, contradiction. 
+
+\hs
+
+\noi$\bullet$ \textbf{Exercise 10.10 p. 67 of the book.} Prove the following Theorem:  
+
+\noi\textbf{Theorem.} Let $J$ and $C$ be well-ordered sets; assume that there is no surjective function mapping a section of $J$ onto $C$. Then there exists a unique function $h: J \to C$ satisfying the equation
+\[h(x) = \min(C\sm h(S_x)) \tag{$\ast$}
+\]
+for each $x \in J$, where $S_x$ is the section of $J$ by $x$. 
+
+\noi\textbf{Solution.}
+\begin{enumerate}
+\item[(a)] If $h$ and $k$ map sections of $J$, or all of $J$, into $C$ and satisfy ($\ast$) for all $x$ in their respective domains, show that $h(x) = k(x)$ for all $x$ in both domains.
+
+\item[(b)] If there exists a function $h: S_\alpha \to C$ satisfying ($\ast$), show that there exists a function $k: S_\alpha \cup \{\alpha\} \to C$ satisfying ($\ast$).
+
+\item[(c)] If $K \subset J$ and for all $\alpha \in K$ there exists a function $h_\alpha: S_\alpha \to C$ satisfying ($\ast$), show that there exists a function
+\[k: \bigcup_{\alpha \in K} S_\alpha \to C\]
+satisfying ($\ast$).
+
+\item[(d)] Show by transfinite induction that for every $\beta \in J$, there exists a function $h_\beta: S_\beta \to C$ satisfying ($\ast$). [Hint: If $\beta$ has an immediate predecessor $\alpha$, then $S_\beta = S_\alpha \cup \{\alpha\}$. If not, $S_\beta$ is the union of all $S_\alpha$ with $\alpha < \beta$.]
+
+\item[(e)] Prove the theorem.
+\end{enumerate} 
+
+\noi\textbf{Solution.} 
+
+\noi(a) Otherwise there would be a least $x$ such that $h(x)\ne k(x)$, we would get $h(S_x)=k(S_x)$, and $(*)$ would yield a contradiction. 
+
+\noi(b) We define $k$ by $k(x)=h(x)$ if $x<\alpha$ and $k(x)=\min(C\sm h(S_x))$ if $x=\alpha$, and verify that $k$ satisfies $(*)$. 
+
+\noi(c) Set $k(x)=h_\alpha(x)$ if $x\in S_\alpha$. To show that $k(x)$ is well defined, we must check that $\beta>\alpha$ implies $h_\beta(x)=h_\alpha(x)$. But this follows from (a). 
+
+\noi(d) Let $I$ be the set of all $\beta\in J$ such that there is a map $h_\beta:S_\beta\to C$ satisfying $(*)$. It suffices to show that $I$ is inductive. So, assume that $\beta$ is in $J$ and that $S_\beta\subset I$. We must show $\beta\in I$. To do that, we use (b) if $\beta$ has an immediate predecessor, and we use (c) if not. 
+
+\noi(e) We define $h$ by 
+$$
+h(x)=
+\begin{cases}
+\min(C\sm h_x(S_x))&\text{if }x=\max(J)\\ 
+h_{x+1}(x)&\text{if }x\ne\max(J),
+\end{cases} 
+$$ 
+where ``$x\ne\max(J)$'' means ``$x\ne\max(J)$ if $J$ has a maximum'', and $x+1$ is the least element greater than $x$. Let us show that $h$ satisfies $(*)$, that is, $h(x)=\min(C\sm h(S_x))$. We can assume $x\ne\max(J)$ (in the above sense). We must show $h_{x+1}(x)=\min(C\sm h(S_x))$. Since we have $h_{x+1}(x)=\min(C\sm h_{x+1}(S_x))$ by (d) it suffices to prove $h(S_x)=h_{x+1}(S_x)$. Let $y$ be in $S_x$, that is, $y\in J$ and $y<x$. It is enough to verify $h(y)=h_{x+1}(y)$, that is, $h_{y+1}(y)=h_{x+1}(y)$. We have $y+1<x+1$, and thus $S_{y+1}\subset S_{x+1}$, and (a) implies $h_{x+1}|S_{y+1}=h_{y+1}$. This proves $h_{y+1}(y)=h_{x+1}(y)$, which is what we wanted. 
+
+\hs
+
+\noi$\bullet$ \textbf{Supplementary Exercise 11.1 p. 72 of the book.} 
+
+\begin{thm}[General principle of recursive definition]\label{TGPRD1}
+Let $J$ be a well-ordered set; let $C$ be a set. Let $\mc F$ be the set of all functions mapping sections of $J$ into $C$.
+Given a function $\rho:\mc F\to C$, there exists a unique function $h:J\to C$ such
+that $h(\alpha)=\rho(h|S_\alpha)$ for each $\alpha\in J$. 
+\end{thm} 
+
+\noi[Hint: Follow the pattern outlined in Exercise 10 of §10.] 
+
+\noi\textbf{Solution.} A close inspection of the solution to Exercise 10 of §10 reveals that the sole property of the element $c$ of $C$ defined by the equality $c:=\min(C\sm h(S_x))$ is that it depends only on the restriction $h|S_x$. This implies that, if, in the proof given by the book, we replace ``$\min(C\sm h(S_x))$'' with ``$\rho(h|S_x)$'', then we obtain a proof of Theorem~\ref{TGPRD1}. 
+
+\hs
+
+\noi Here is a slightly different way of proving the General Principle of Recursive Definition. We state and prove Theorem~\ref{TGPTI} below, which we call General Principle of Transfinite Induction, and which generalizes both the usual Principle of Transfinite Induction (Exercise 10.7 p.~67 of the book and Theorem~\ref{TPTI1} p.~\pageref{TPTI1}. above) and the General Principle of Recursive Definition (Supplementary Exercise 1 p.~72 of the book and Theorem~\ref{TGPRD1} above). 
+
+For each ordered set $X$ and each $x$ in $X$ we denote the subset $\{y\in X\ |\ y<x\}$ by $X(x)$. (This is the so-called \emph{section by} $x$.) Let $X$ be a well-ordered set, let $A$ be a set, let 
+$$
+\rho:\bigcup_{x\in X}A^{X(x)}\to A,
+$$ 
+where $A^{X(x)}$ stands for the set of all maps from $X(x)$ to $A$. (Note that the sets $A^{X(x)}$ with $x$ in $X$ are disjoint.) 
+
+\begin{thm}[General Principle of Recursive Definition]\label{TGPRD2}
+There is a unique map $f:X\to A$ such that $f(x)=\rho(f|X(x))$ for all $x$ in $X$. 
+\end{thm} 
+
+The main ingredient to prove Theorem \ref{TGPRD2} is 
+
+\begin{thm}[General Principle of Transfinite Induction]\label{TGPTI}
+If $P(X)$ is a property that a well-ordered set $X$ may or may not have, and if $P(X)$ holds whenever $P(X(x))$ holds for all $x$ in $X$, then $P(X)$ holds for all well-ordered set $X$. 
+\end{thm} 
+
+Before proving Theorem \ref{TGPTI} recall the usual Principle of Transfinite Induction: 
+
+\begin{thm}[Principle of Transfinite Induction]\label{TPTI2} 
+Let $U$ be a well-ordered set. If $Q(u)$ is a property that an element $u$ of $U$ may or may not have, and if $Q(u)$ holds whenever $Q(v)$ holds for all $v<u$, then $Q(u)$ holds for all $u$ in $U$. 
+\end{thm} 
+
+This is Exercise 10.7 p. 67 of the book. 
+
+\begin{proof}[Proof of Theorem \ref{TGPTI}] 
+Let $X$ be a well-ordered set. We assume that $P(X)$ holds whenever $P(X(x))$ holds for all $x$ in $X$, and we want to prove $P(X)$. Let $\mc D$ be the set of all downward closed subsets of $X$. Then we have $\mc D=\{X(x)\ |\ x\in X\}\cup\{X\}$, and $X(x)\subsetneqq X(y)$ if and only if $x<y$, and $X(x)\subsetneqq X$ for all $x$, and $\mc D$ is well-ordered by proper inclusion. We want to apply the Principle of Transfinite Induction (Theorem~\ref{TPTI2}). To this end we set $U:=\mc D$ and, for $D\in\mc D$ we define $Q(D)$ as being $P(D)$. Then Theorem~\ref{TPTI2} tells us that $P(D)$ holds for all $D$ in $\mc D$, and thus in particular for $D=X\in\mc D$. 
+\end{proof} 
+
+\begin{proof}[Proof of Theorem \ref{TGPRD2}] 
+We denote the statement of Theorem \ref{TGPRD2} by $P(X)$, and we want to apply Theorem~\ref{TGPTI}. So we assume that $P(X(x))$ holds for all $x$ in $X$. It suffices to prove $P(X)$. 
+
+Case 1: $X$ has a largest element $\infty\in X$. By assumption, for all $x<\infty$ there is a unique map $f_x:X(x)\to A$ such that $f(y)=\rho(f|X(y))$ for all $y<x$. It is easy to check that each $f_x$ is the restriction of $f_\infty$ to $X(x)$, and that, if we define $f:X\to A$ by $f(\infty):=\rho(f_\infty)$ and $f(x):=f_\infty(x)$ if $x<\infty$, then $f$ is the unique solution to our problem. 
+
+Case 2: $X=\bigcup_{x\in X}X(x)$. We have maps $f_x:X(x)\to A$ as above, and it is easy to check that that map $f:X\to A$ defined by $f(x):=f_{x+1}(x)$, where $x+1$ is the successor of $x$, is the unique solution to our problem. 
+\end{proof} 
+
+To see why the General Principle of Transfinite Induction (Theorem~\ref{TGPTI}) generalizes the Principle of Transfinite Induction (Theorem~\ref{TPTI2}), note that we can define $P(X)$ in terms of the $Q(u)$ by decreeing the $P(X)$ holds if and only if 
+$$
+\Big((\exists\ u\in U)\ \big(X=U(u)\big)\Big)\implies Q(u).
+$$ \hrule\medskip
+
+\noi$\bullet$ \textbf{Supplementary Exercise 11.2 p. 72 of the book.} 
+
+\noi(a) Let $J$ and $E$ be well-ordered sets; let $h: J \to E$. Show the following two statements are equivalent:
+\begin{enumerate}
+    \item[(i)] $h$ is order preserving and its image is $E$ or a section of $E$.
+    \item[(ii)] $h(\alpha) = \text{smallest }[E - h(S_\alpha)]$ for all $\alpha$.
+\end{enumerate}
+[Hint: Show that each of these conditions implies that $h(S_\alpha)$ is a section of $E$; conclude that it must be the section by $h(\alpha)$.]
+
+\noindent (b) If $E$ is a well-ordered set, show that no section of $E$ has the order type of $E$, nor do two different sections of $E$ have the same order type. [Hint: Given $J$, there is at most one order-preserving map of $J$ into $E$ whose image is $E$ or a section of $E$.] 
+
+\noi\textbf{Solution.} 
+
+\noi(a) For all $X\subset E$ set $X^c:=E\sm X$. For the sake of prudence, we change (ii) to: 
+
+\noi(ii') $h(S_x)\ne E$ and $h(x)=\min(h(S_x)^c)$ for all $x$. 
+
+\noi We want to show that (i) and (ii') are equivalent. 
+
+\noi(i) implies (ii'). We prove $h(S_x)\ne E$ by noting that $h(S_x)=E$ we would entail $h(x)=h(y)$ for some $y<x$, contradiction. To prove $h(x)=\min(h(S_x)^c)$, assume by contradiction that we have $h(x)\ne\min(h(S_x)^c)=:e$. If $h(x)<e$, then $h(x)\notin h(S_x)^c$, that is, $h(x)\in h(S_x)$, and we reach a contradiction as above. If $e<h(x)$, then $e=h(y)$ for some $y<x$, that is, $\min(h(S_x)^c)=e=h(y)\in h(S_x)$, contradiction. 
+
+\noi(ii') implies (i). We assume (ii'), and, in particular, that $h$ is weakly increasing. To show that $h$ is increasing, suppose $x<y$ and $h(x)=h(y)$ (we cannot have $h(x)>h(y)$ because $h$ is weakly increasing). Since $h(x)=h(y)=\min(h(S_y)^c)$, we have $h(x)\in h(S_y)^c$, but $h(x)\in h(S_y)$, contradiction. Finally, $h(J)$ is downward closed because $e<h(x)=\min(h(S_x)^c)$ implies $e\in h(S_x)\subset h(J)$. 
+
+In the statement of the Exercise, the condition that $J$ is well-ordered can be changed from an assumption to a conclusion. 
+
+\noi(b) Let $a$ be in $E$, and assume there is an isomorphism of well-ordered sets $h:S_a\to E$. It suffices to derive a contradiction. Let $i:S_a\to E$ be the inclusion. By (a) $h$ and $i$ satisfy the same recursion relation. By the Theorem about the General Principle of Definition by Recursion, we have $h=i$, and thus $a\in h(S_a)=i(S_a)=S_a$, contradiction. 
+
+\hs 
+
+\noi$\bullet$ \textbf{Supplementary Exercise 11.3 p. 73 of the book.} Let $J$ and $E$ be well-ordered sets; suppose there is an order-preserving map $k: J \to E$. Using Exercises 1 and 2, show that $J$ has the order type of $E$ or a section of $E$. [Hint: Choose $e_0 \in E$. Define $h: J \to E$ by the recursion formula
+\[h(\alpha) = \text{smallest }[E - h(S_\alpha)] \text{ if } h(S_\alpha) \neq E,\]
+and $h(\alpha) = e_0$ otherwise. Show that $h(\alpha) \leq k(\alpha)$ for all $\alpha$; conclude that $h(S_\alpha) \neq E$ for all $\alpha$.] 
+
+\noi\textbf{Solution.} We can assume $E\ne\varnothing$. Let $e_0$ be in $E$. Let $x$ be in $J$. We define $h:J\to E$ as in the hint. 
+
+\noi Claim 1: $h(x)\le k(x)$ for all $x$. 
+
+\noi Claim 2: $h(y)\le k(y)$ for all $y$ in $S_x$ implies $h(S_x)\ne E$. 
+
+\noi Proof of Claim 2. For all $y$ in $S_x$ we have $h(y)\le k(y)<k(x)$, and in particular $k(x)\ne h(y)$. This implies $k(x)\notin h(S_x)$. 
+
+\noi Proof of Claim 1. Assume by contradiction $h(x)>k(x)$ for some $x$. We can assume that $x$ is minimum for this condition. For $y<x$ we have $h(y)\le k(y)$, hence $h(S_x)\ne E$ by Claim~2.  
+
+Claims 1 and 2 imply $h(x)=\min(h(S_x)^c)$ for all $x$, hence $h$ is increasing and $h(J)$ is downward closed by Supplementary Exercise 11.2 above, hence $J$ has the order type of $E$ or a section of $E$. 
+
+\hs
+
+\noi$\bullet$ \textbf{Supplementary Exercise 11.4 p. 73 of the book.} Use Exercises 1--3 to prove the following:
+\begin{enumerate}
+    \item[(a)] If $A$ and $B$ are well-ordered sets, then exactly one of the following three conditions holds: $A$ and $B$ have the same order type, or $A$ has the order type of a section of $B$, or $B$ has the order type of a section of $A$. [Hint: Form a well-ordered set containing both $A$ and $B$, as in Exercise 8 of §10; then apply the preceding exercise.]
+    \item[(b)] Suppose that $A$ and $B$ are well-ordered sets that are uncountable, such that every section of $A$ and of $B$ is countable. Show $A$ and $B$ have the same order type.
+\end{enumerate} 
+
+\noi\textbf{Solution.} (a) For any element $x$ of any ordered set $X$, let $X_{<x}$ denote the corresponding section, and let us set $X_{<\infty}:=X$. Let $C$ be the well-ordered set containing both $A$ and $B$, described in Exercise~8 of §10, and let $k:A\to C$ and $\ell:B\to C$ be the natural increasing maps. By the previous Exercise, we have isomorphisms $A\simeq C_{<x}$ and $B\simeq C_{<y}$ for some $x$ and $y$ in $C\cup\{\infty\}$. We can assume $x\le y$. Then $x=y$ implies $A\simeq B$. If $x<y$, we get 
+$$
+A\simeq C_{<x}=(C_{<y})_{<x}\subsetneqq C_{<y}\simeq B.
+$$ 
+This implies $A\simeq B_{<b}$ for some $b$ in $B$. The fact that the various cases are exclusive follows from Supplementary Exercise 11.2b. 
+
+\noi(b) Follows from (a). 
+
+Here is an important consequence of (a): 
+
+\begin{thm}[Comparability Theorem] 
+If $A$ and $B$ are sets, then exactly one of the following three conditions holds: 
+
+\emph{(i)} there is a bijection $A\to B$, 
+
+\emph{(ii)} there is an injection $A\to B$ and a surjection $B\to A$, 
+
+\emph{(iii)} there is an injection $B\to A$ and a surjection $A\to B$. 
+\end{thm}
+
+\hrule\medskip
+
+\noi$\bullet$ \textbf{Supplementary Exercise 11.5 p. 73 of the book.} Let $X$ be a set; let $\mc A$ be the collection of all pairs $(A, <)$, where $A$ is a subset of $X$ and $<$ is a well-ordering of $A$. Define
+\[(A, <) \prec (A',<')\]
+if $(A, <)$ equals a section of $(A',<')$.
+\begin{enumerate}
+    \item[(a)] Show that $\prec$ is a strict partial order on $A$.
+    \item[(b)] Let $\mc B$ be a subcollection of $A$ that is simply ordered by $\prec$. Define $B'$ to be the union of the sets $B$, for all $(B, <) \in\mc B$; and define $<'$ to be the union of the relations $<$, for all $(B, <) \in\mc B$. Show that $(B', <')$ is a well-ordered set.
+\end{enumerate} 
+
+\noi\textbf{Solution.} Left to the reader. 
+
+\hs
+
+\noi$\bullet$ \textbf{Supplementary Exercise 11.6 p. 73 of the book.} Use Exercises 1 and 5 to prove the following: 
+
+\noi\textbf{Theorem.} The maximum principle is equivalent to the well-ordering theorem. 
+
+\noi\textbf{Solution.} The fact that the well-ordering theorem implies the maximum principle is proved on p.~70 of the book. Let us prove the converse. In the setting of Supplementary Exercise~11.5b, take $\mc B$ maximal. Then it suffices to show that $B'=X$. If it was not so, we could add to $B'$ a new element $x$ and make it the largest element of $B'\cup\{x\}$, which would then be a well-ordered set larger than $B'$, contradiction. 
+
+\hs 
+
+\noi$\bullet$ \textbf{Supplementary Exercise 11.7 p. 73 of the book.} Use Exercises 1--5 to prove the following: 
+
+\noi\textbf{Theorem.} The choice axiom is equivalent to the well-ordering theorem.
+
+\noi Proof. Let $X$ be a set; let $c$ be a fixed choice function for the nonempty subsets of $X$. If $T$ is a subset of $X$ and $<$ is a relation on $T$, we say that $(T, <)$ is a tower in $X$ if $<$ is a well-ordering of $T$ and if for each $x \in T$,
+\[x = c(X - S_x(T)),\]
+where $S_x(T)$ is the section of $T$ by $x$.
+\begin{enumerate}
+    \item[(a)] Let $(T_1, <_1)$ and $(T_2, <_2)$ be two towers in $X$. Show that either these two ordered sets are the same, or one equals a section of the other. [Hint: Switching indices if necessary, we can assume that $h: T_1 \to T_2$ is order preserving and $h(T_1)$ equals either $T_2$ or a section of $T_2$. Use Exercise~2 to show that $h(x) = x$ for all $x$.]
+    \item[(b)] If $(T, <)$ is a tower in $X$ and $T \neq X$, show there is a tower in $X$ of which $(T, <)$ is a section.
+    \item[(c)] Let $\{(T_k, <_k)|k \in K\}$ be the collection of all towers in $X$. Let
+    \[T = \bigcup_{k\in K} T_k \text{ and } <\ = \bigcup_{k\in K} (<_k).\]
+    Show that $(T, <)$ is a tower in $X$. Conclude that $T = X$.
+\end{enumerate} 
+
+\noi\textbf{Solution.} (a) The map $h$ in the hint exists by Supplementary Exercise~4a. Let us show $h(x)=x$ for all $x$ thanks to Supplementary Exercise~2. Assume by contradiction that we have $h(x)\ne x$ for some $x$ in $T_1$, which we can suppose to be minimum for this condition. The map $h$ induces an isomorphism $T_1\simeq h(T_1)$, implying $h(T_{1,<y})=T_{2,h(y)}$ for all $y$ in $T_1$. By the choice of $x$ we get $T_{1,<x}=T_{2,<h(x)}$. Since $T_1$ and $T_2$ are towers, this entails 
+$$
+h(x)=c(X\sm T_{2,<h(x)})=c(X\sm T_{1,<x})=x,
+$$ 
+contradiction. The fact that $h(x)=x$ for all $x$ in $T_1$ implies, by Supplementary Exercise 11.2a, that $T_1$ is contained and downward closed in $T_2$. 
+
+\noi(b) Add $c(X\sm T)$ to $T$, and make it the largest element. 
+
+\noi(c) Left to the reader. 
+
+This shows that the choice axiom implies the well-ordering theorem. The converse is clear. 
+
+\section{Chapter 2. Topological Spaces and Continuous Functions}
+
+\noi\textbf{Lemma 13.1 p. 80 of the book.} Recall the statement: 
+
+\begin{lem}[Lemma 13.1 p. 80 of the book]\label{L13.1}
+Let $X$ be a set; let $\mathcal{B}$ be a basis for a topology $\mathcal{T}$ on $X$. Then $\mathcal{T}$ equals the collection of all unions of elements of $\mathcal{B}$.
+\end{lem}
+
+Here is the proof given in the book: 
+
+\begin{proof}
+Given a collection of elements of $\mathcal{B}$, they are also elements of $\mathcal{T}$. Because $\mathcal{T}$ is a topology, their union is in $\mathcal{T}$. Conversely, given $U \in \mathcal{T}$, choose for each $x\in U$ an element $B_x$ of $\mathcal{B}$ such that $x\in B_x \subset U$. Then $U=\bigcup_{x\in U}B_x$, so $U$ equals a union of elements of $\mathcal{B}$.
+\end{proof} 
+
+To avoid the Axiom of Choice when showing that $U \in \mathcal{T}$ is a union of elements of $\mathcal{B}$, just note that $U$ is the union of all those $B$ in $\mc B$ which are contained in  $U$. 
+
+%This kind of unnecessary use of the Axiom of Choice occurs several times in the book. To avoid repetitions we state the following Lemma. \begin{lem}[Avoiding the Axiom of Choice]\label{LAOC}Let $X$ be a topological space, $A$ a subset. Then $A$ is open if and only if for all $x$ in $A$ there is an open subset $U$ such that $x\in U\subset A$. \end{lem} 
+
+\hs
+
+\noi$\bullet$ \textbf{Solution to Exercise 13.6 p. 83 of the book.} We must show that the topologies $\mc T_\ell$ and $\mc T_K$ are incomparable. 
+
+\noi Claim: $[2,3)\notin\mc T_K$. Proof. If not we would have $2\in(a,b)\sm K\subset[2,3)$ for some $a$ and $b$, hence $a<2$ and $a\le2$, contradiction. 
+
+\noi Claim: $(-1,1)\sm K\notin\mc T_\ell$. Proof. If not we would have $0\in[a,b)\subset(-1,1)\sm K\subset[2,3)$ for some $a$ and $b$, hence $a\le0<b$, hence $a<\frac1n<b$ for some $n$, contradiction. 
+
+\hs
+
+\noi$\bullet$ \textbf{Solution to Exercise 13.7 p. 83 of the book.} Let us use the following notation: 
+
+$\T_s:=$ standard topology, 
+
+$\T_K:=$ topology of $\R_K$, 
+
+$\T_{fc}:=$ finite complement topology, 
+
+$\T_u:=$ upper limit topology (having the sets $(a,b]$ as basis), 
+
+$\T_\infty:=$ topology having the sets $(-\infty,a)$ as basis. 
+
+\noi We denote the corresponding topological spaces by $\R_s,\R_K,\R_{fc},\R_u$ and $\R_\infty$. Finally we write $\B_s,\B_K,\B_u$ and $\B_\infty$ for the obvious bases. 
+
+The inclusions between these five topologies on $\R$ can be summarized by the diagram 
+$$
+\begin{matrix}
+&u\\ 
+&K\\ 
+&s\\ 
+fc&&\infty,
+\end{matrix}
+$$ 
+where ``$i$ below $j$'' means ``$\T_i\subsetneqq\T_j$'', and ``$i$ and $j$ on the same level'' means ``$\T_i$ and $\T_j$ are incomparable''. 
+
+Preliminary comments: It is easy to see that the elements of $\T_\infty$ are $\varnothing$, the intervals $(-\infty,a)$, and $\R$, and to observe that $\T_\infty\cap\T_{fc}=\{\varnothing,\R\}$. It is also easy to compare the standard topology $\T_s$ to the others: the elements of $\T_{fc}$ and $\T_\infty$ are clearly open in $\R_s$, and it is plain that the intervals $(a,b)$ (which are the elements on $\B_s$) are open in $\R_K$ and in $\R_\infty$ (note that $(a,b)=\bigcup_{d<b}(a,d])$. Clearly, $(-1,1)\sm K\in\T_K$ and $(a,b]\in\T_u$ are not open in $\R_s$. Moreover $(2,3]$ is in $\T_u$ but not in $\T_K$. So, it only remains to prove $\T_K\subset\T_u$. 
+
+Let $x$ be in $(a,b)\sm K$. It suffices to show that there is a $c$ such that $x\in(c,x]\subset(a,b)\sm K$. If $x\le0$ we set $c:=a$. If $\frac1{n+1}<x<\frac1n$ we set $c:=\frac1{n+1}\,$. If $x>1$ we set $c:=\max(1,a)$. 
+
+\hs
+
+\noi\textbf{Exercise 13.8c p. 83 of the book.} Show that the collection 
+$$
+\mc C=\{[a,b)\ |\ a<b,\ a \text{ and $b$ rational}\}
+$$ 
+is a basis that generates a topology different from the lower limit topology on $\R$. 
+
+\noi\textbf{Solution.} It is easy to check that $\mc C$ is indeed a basis. Let us show that it generates a topology different from the lower limit topology. Otherwise we would have $[\sqrt2,2)=\bigcup_{i\in I}[a_i,b_i)$ with $a_i<b_i$ and $a_i$ and $b_i$ rational for all $i$. This implies $a_i\ge\sqrt2$, that is $a_i>\sqrt2$, for all $i$, hence $\sqrt2\notin\bigcup_{i\in I}[a_i,b_i)$, contradiction. 
+
+\hs
+
+\noi\textbf{Subspace topology p. 88 of the book.} Munkres writes: 
+
+\noi\textbf{Definition.} Let $X$ be a topological space with topology $\mathcal{T}$. If $Y$ is a subset of $X$, the collection
+\[
+\mathcal{T}_Y = \{Y \cap U \mid U \in \mathcal{T}\}
+\]
+is a topology on $Y$, called the \textbf{subspace topology}. With this topology, $Y$ is called a \textbf{subspace} of $X$; its open sets consist of all intersections of open sets of $X$ with $Y$. %\vspace{10pt}
+
+It is easy to see that $\mathcal{T}_Y$ is a topology. It contains $\varnothing$ and $Y$ because
+\[
+\varnothing = Y \cap \varnothing \quad \text{and} \quad Y = Y \cap X,
+\]
+where $\varnothing$ and $X$ are elements of $\mathcal{T}$. The fact that it is closed under finite intersections and arbitrary unions follows from the equations
+\[
+(U_1 \cap Y) \cap \cdots \cap (U_n \cap Y) = (U_1 \cap \cdots \cap U_n) \cap Y,
+\]
+\[
+\bigcup_{\alpha \in J} (U_\alpha \cap Y) = \left(\bigcup_{\alpha \in J} U_\alpha\right) \cap Y.
+\] 
+
+\begin{proof}
+Given a collection of elements of $\mathcal{B}$, they are also elements of $\mathcal{T}$. Because $\mathcal{T}$ is a topology, their union is in $\mathcal{T}$. Conversely, given $U \in \mathcal{T}$, choose for each $x \in U$ an element $B_x$ of $\mathcal{B}$ such that $x \in B_x \subset U$. Then $U = \bigcup_{x\in U} B_x$, so $U$ equals a union of elements of $\mathcal{B}$.
+\end{proof} 
+
+\noi End of the excerpt. 
+
+The Axiom of Choice is used to handle arbitrary unions. One can avoid it by proceeding as follows. 
+
+Given $A\subset Y\subset X$, set $\mc U:=\{U\in\mc T\ |\ U\cap Y\subset A\}$, and define the open subset $U_A$ of $X$ by $U_A:=\bigcup_{U\in\mc U}U$. Then we have 
+$$
+A\subset U_A\iff U_A\cap Y=A.
+$$ 
+Proof: We have $Y\cap U_A=Y\cap\bigcup_{U\in\mc U}U=\bigcup_{U\in\mc U}Y\cap U\subset A$, so 
+$$A=U_A\cap Y\iff A\subset U_A\cap Y\iff A\subset U_A.\qquad\square
+$$
+And we decree that $A$ is open in $Y$ if and only if the above equivalent conditions are satisfied. This is equivalent to the usual definition. Proof: If $A=U_A\cap Y$, then $A$ is open in $Y$ in the usual sense. If $A=U\cap Y$ for some $U$ open in $X$, then $U\in\mc U$, hence $U\subset U_A$, and we get $A=U\cap Y\subset U_A\cap Y\subset A$, hence $A=U_A\cap Y$. Observe that, in general, $U_A\cap Y$ is the \textbf{interior} of $A$ in $Y$. 
+
+Note that things are even nicer if we use closed subsets instead of open ones. Indeed, given $A\subset Y\subset X$ as above, there is a least closed subset $C_A$ of $X$ such that $A\subset C_A\cap Y$, and $C_A$ is the closure of $A$ in $X$. What I find remarkable is that $C_A$ depends only on $A$ and $X$, but not on $Y$. (I don't know if there is a conceptual reason for that.) (To see that $U_A$ depends on $Y$ in general, let $X$ be nonempty and let $A$ be empty. If $Y=\varnothing$, then $U_A=X$, but if $Y=X$, then $U_A=\varnothing$.) \bigskip 
+
+\hrule\medskip
+
+\noi\textbf{Exercise 16.5 p. 92 of the book.} Let $X$ and $X'$ denote a single set in the topologies $\mc T$ and $\mc T'$, respectively; let $Y$ and $Y'$ denote a single set in the topologies $\mc U$ and $\mc U'$, respectively. Assume these sets are nonempty.
+
+\noi(a) Show that if $\mc T'\supset\mc T$ and $\mc U'\supset\mc U$, then the product topology on $X'\times Y'$ is finer than the product topology on $X\times Y$.
+
+\noi(b) Does the converse of (a) hold? Justify your answer.
+
+\noi\textbf{Solution.} Part (a) is straightforward. The answer to the question in (b) is Yes. Here is the justification. We denote the respective product topologies by $\mc V$ and $\mc V'$.  Assume $\mc V'\supset\mc V$. It suffices to show $\mc T'\supset\mc T$. Let $U$ be in $\mc T$. It is enough to prove $U\in\mc T'$. The set $U\times Y$ is in $\mc V\subset\mc V'$, that is, 
+$$
+U\times Y=\bigcup_{i\in I}\ (U'_i\times V'_i)
+$$ 
+with $U'_i\in\mc T'$ and $V'_i\in\mc U'$ for all $i$. It suffices to show $U=\bigcup_{i\in I}U'_i$. Let $u$ be in $U$. Pick some $y$ in $Y$. Then $u\times y=u'_i\times v'_i$ for some $i$ and some $u'_i\in U'_i$ and $v'_i\in V'_i$, so $u=u'_i$ is in $U'_i$. Conversely, let $u'_i$ be in $U'_i$ for some $i$. Then $u'_i\times v'_i=u\times y$ for some $u$ in $U$ and $y$ in $Y$. In particular $u'_i=u\in U$. 
+
+\hs
+
+\noi\textbf{Exercise 16.7 p. 92 of the book.} Let $X$ be an ordered set. If $Y$ is a proper subset of $X$ that is convex in $X$, does it follow that $Y$ is an interval or a ray in $X$? 
+
+\noi\textbf{Solution.} No. Example: $X:=\{1,2\}\times\Z$ with the dictionary order, $Y:=\Z\times\{1\}$. 
+
+\hs
+
+\noi\textbf{Exercise 16.8 p. 92 of the book.} If $L$ is a straight line in the plane, describe the topology $L$ inherits as a subspace of $\R_\ell\times\R$ and as a subspace of $\R_\ell\times\R_\ell$. In each case it is a familiar topology. 
+
+\noi\textbf{Solution.} Let $\T_1$ be the topology of $\R_\ell\times\R$, let $\T_2$ be the topology of $\R_\ell\times\R_\ell$, and let $L_i$, for $i=1,2$, be the line $L$ equipped with the topology induces by $T_i$. I think what Munkres wants us to realize is that $L_i$ is \textbf{homeomorphic} to $\R$ with the standard topology, or to $\R$ with the lower limit topology, or to $\R$ with the discrete topology, depending on $i$ and the direction of $L$. But of course the word ``homeomorphic'' is introduced much later in the book, so, strictly speaking, the question, as stated, does not make sense. We will solve the following interpretation of the exercise: 
+
+\noi\textbf{Exercise 16.8'.} For $i=1,2$ let $p_i:\R^2\to\R$ be the $i$th canonical projection. We set $i(L):=2$ if $L$ is vertical, and $i(L)=1$ otherwise. Then the restriction $r_L:L\to\R$ of $p_{i(L)}$ to $L$ is bijective. Let $\T_o$ be the standard topology of $\R$ (the subscript ``o'' stands for ``order topology''), let $\R_o$ be $\R$ equipped with $\T_o$, let $\T_\ell$ be the lower limit topology of $\R$, let $\R_\ell$ be $\R$ equipped with $\T_\ell$, let $\T_{\ell o}$ be the topology of $\R_\ell\times\R_o$, let $\T_{\ell\ell}$ be the topology of $\R_\ell\times\R_\ell$, let $\mc U_{\ell o}$ be the topology induced on $L$ by $\T_{\ell o}$, let $\mc U_{\ell\ell}$ be the topology induced on $L$ by $\T_{\ell\ell}$, let $\T_{\ell oL}$ be the topology on $\R$ obtained by transporting $\T_{\ell o}$ along $r_L$, and let $\T_{\ell\ell L}$ be the topology on $\R$ obtained by transporting $\T_{\ell\ell}$ along $r_L$. Describe the topologies $\T_{\ell oL}$ and $\T_{\ell\ell L}$. 
+
+\noi\textbf{Solution to Exercise 16.8'.} We decree that the slope of a vertical line is $+\infty$. Let $s\in\R\cup\{+\infty\}$ be the slope of $L$, and let $\T_d$ be the discrete topology of $\R$. We claim 
+$$
+\T_{\ell oL}=
+\begin{cases}
+\T_o&\text{if }s=+\infty\\ 
+\T_\ell&\text{if }s\in\R,
+\end{cases}
+$$ 
+$$
+\T_{\ell\ell L}=
+\begin{cases}
+\T_d&\text{if }s<0\\ 
+\T_\ell&\text{otherwise.}
+\end{cases}
+$$ 
+To prove this, we first analyze the intersections 
+$$
+L\cap\big(([a,b)\times(c,d)\big)\text{ and }L\cap\big(([a,b)\times[c,d)\big)
+$$ 
+for $a,b,c,d\in\R,a<b,c<d$, where $L$ is fixed and $a,b,c$ and $d$ vary. We obtain a set of subsets of $L$, which we transport to $\R$ by $r_L$, and we take the topology on $\R$ generated by these subsets. The details are tedious, but very easy, and left to the reader. 
+
+\hs
+
+\noi\textbf{Exercise 16.9 p. 92 of the book.} Show that the dictionary order topology on the set $\R\times\R$ is the same as the product topology $\R_d\times\R$, where $\R_d$ denotes $\R$ in the discrete topology. Compare this topology with the standard topology on $\R^2$. 
+
+\noi\textbf{Solution.} First recall the definition of the order topology: 
+
+Let $X$ be a set with a simple order relation; assume $X$ has more than one element. Let $\mathcal{B}$ be the collection of all sets of the following types:
+\begin{enumerate}
+    \item All open intervals $(a,b)$ in $X$.
+    \item All intervals of the form $[a_0,b)$, where $a_0$ is the smallest element (if any) of $X$.
+    \item All intervals of the form $(a,b_0]$, where $b_0$ is the largest element (if any) of $X$.
+\end{enumerate}
+The collection $\mathcal{B}$ is a basis for a topology on $X$, which is called the \textbf{order topology}. 
+
+The dictionary order topology on $\R\times\R$ is given by the basis elements $(a\times b,c\times d)$ with $a\times b<c\times d$. One checks easily that the intervals of the form $(a\times b,a\times c)$ with $b<c$ also form a basis for the order topology (see Example~2 p.~85 of the book). This shows that the dictionary order topology on the set $\R\times\R$ is the same as the product topology $\R_d\times\R$. It is strictly finer than the standard topology on $\R^2$. 
+
+\hs
+
+% 2411180941 https://docs.google.com/document/d/10xdrlyZeC-5pva5J1qbJltRwUEIVd6Eaotx7jakS8ZA/edit?tab=t.0
+
+\noi\textbf{Exercise 16.10 p. 92 of the book.} Let $I=[0,1]$. Compare the product topology on $I\times I$, the dictionary order topology on $I\times I$, and the topology $I\times I$ inherits as a subspace of $\R\times\R$ in the dictionary order topology. 
+
+\noi\textbf{Solution.} Several topological spaces $X$ are (explicitly or implicitly) involved in the above statement. We denote the topology of such an $X$ by $\T(X)$, and if $\T(X)$ comes with a preferred basis, we denote it by $\B(X)$. If $X$ is an ordered set, we denote by $X_o$ the set $X$ equipped with the order topology $\T(X_o)$, and by $\B(X_o)$ the basis defining $\mc T(X_o)$ (see the Solution to Exercise~16.9 p.~92 above). If $S$ is a set, we denote by $S_d$ the set $S$ equipped with the discrete topology, and we regard the set $\mc B(S_d)$ of all singletons contained in $S$ as the preferred basis of $\mc T(S_d)$. If $X$ and $Y$ are topological spaces with preferred basis $\B(X)$ and $\B(Y)$, we define $\B(X\times Y)$ as the basis consisting of the $B\times C$ with $B\in\mc B(X)$ and $C\in\mc B(Y)$ (see Theorem~15.1 p.~86). If $X$ is a topological space with preferred basis $\B(X)$ and $Y$ is a subspace of $X$, we define $\B(Y)$ as the basis consisting of the $B\cap Y$ with $B\in\mc B(X)$ (see Theorem~16.1 p.~89). If $X$ and $Y$ are ordered set, we denote by $(X\times Y)_o$ the set $X\times Y$ equipped with the dictionary order topology. 
+
+Recall the following facts from the book. By Example~1 p.~85, $\R$ equipped with its standard topology coincides with $\R_o$. By Example~1 p.~90, $I\subset\R$ equipped with the subspace topology is equal to $I_o$. In Example~3 p.~90, $(I^2)_o$ is denoted $I_o^2$, and is called the \textbf{ordered square}. Remember also that in the Solution to Exercise~16.9 p.~92 we saw that $(\R^2)_o=\R_d\times\R_o$ (equipped with the product topology). 
+
+Using these facts and Theorem~16.3 p.~89, it is easy to see that the three topological spaces of the exercise are respectively $(I_o)^2,(I^2)_o$ and $I_d\times I_o$. In particular, the six sets 
+$$
+\T((I_o)^2),\quad\T((I^2)_o),\quad\T(I_d\times I_o),\quad\B((I_o)^2),\quad\B((I^2)_o),\quad\B(I_d\times I_o)
+$$ 
+are well-defined. 
+
+We claim 
+$$
+\mc T((I_o)^2)\cup\mc T((I^2)_o)\subsetneqq\mc T(I_d\times I_o)\quad\text{and}\quad\mc T((I_o)^2)\not\subset\mc T((I^2)_o)\not\subset\mc T((I_o)^2).
+$$ 
+Let $U\subset I\times I$. Then $U\in\mc T(I_d\times I_o)$ if and only if 
+$$
+U=\bigcup_{x\in I}\ (\{x\}\times U_x)
+$$ 
+for some family $(U_x)_{x\in I}$ of members of $\mc T(I_o)$. 
+
+The inclusion $\mc T((I_o)^2)\cup\mc T((I^2)_o)\subset\mc T(I_d\times I_o)$ follows immediately from the above observations. 
+
+The following criterium to prove that a subset of $I^2$ is not in $\mc T((I^2)_o$ will be handy. 
+
+\noi Criterium: If $U$ is an open subset of $(I^2)_o$ containing $0\times1$, then $U$ contains $\varepsilon\times0$ for some $\varepsilon\in I$. 
+
+Thanks to this criterium, we see that 
+$$
+\{0\}\times I=[0\times0,0\times1]\in\mc T(I_d\times I_o)\sm(\mc T((I_o)^2)\cup\mc T((I^2)_o)),
+$$ 
+implying $\mc T((I_o)^2)\cup\mc T((I^2)_o)\ne\mc T(I_d\times I_o)$. 
+
+A similar argument shows that $I\times(0,1]\in\mc T((I_o)^2)\sm\mc T((I^2)_o)$, and thus that $\mc T((I_o)^2)\not\subset\mc T((I^2)_o)$.  
+
+Finally, to prove $\mc T((I^2)_o)\not\subset\mc T((I_o)^2)$, note that $\{0\}\times(0,1)=(0\times0,0\times1)\in\mc T((I^2)_o)\sm\mc T((I_o)^2)$. 
+
+\hs
+
+% removed https://docs.google.com/document/d/18jcH4K8A9CRBgWSgQIAbqhm3ySI4aYJfhapsOAo0axs/edit?tab=t.0
+
+\noi\textbf{Theorem 17.2 p. 94 of the book.} We give a slightly different proof of the indicated Theorem. First recall the statement. 
+
+\begin{thm}[Theorem 17.2 p. 94 of the book]\label{T17.2} 
+Let $X$ be a topological space, $Y$ a subspace, and $A$ a subset of $Y$. Then $A$ is closed in $Y$ if and only $A=Y\cap C$ for some closed subset of $X$. 
+\end{thm} 
+
+\begin{proof} 
+It suffices to show that $Y\sm A=Y\cap U$, where $U$ is an open subset of $X$, if and only if $A=Y\cap(X\sm U)$. Hence it is enough to prove that we have $Y\sm(Y\cap U)=Y\cap(X\sm U)$, or equivalently $Y\sm U=Y\cap(X\sm U)$, for all subset $U$ of $X$. But this is clear. 
+\end{proof}
+
+\hrule\medskip
+
+\noi\textbf{Theorem 17.4 p. 95 of the book.} Recall the statement: 
+
+\begin{thm}[Theorem 17.4 p. 95 of the book] 
+Let $X$ be a topological space, $Y$ a subspace, and $A$ a subset of $Y$. Then the closure $\overline A^Y$ of $A$ in $Y$ equals $\overline A\cap Y$, where $\overline A$ is the closure of $A$ in $X$.
+\end{thm} 
+
+Here is a slightly different proof. 
+
+\begin{proof} 
+Set 
+$$
+\mc B=\{B\ |\ B\text{ closed in }Y,\ B\supset A\}.
+$$ 
+For all $B$ in $\mc B$ put 
+$$
+\mc C(B)=\{C\ |\ C\text{ closed in }X,\ C\supset B\}.
+$$ 
+Finally write 
+$$
+\mc C=\{C\ |\ C\text{ closed in }X,\ C\supset A\}.
+$$ 
+We get 
+$$
+\mc C=\bigcup_{B\in\mc B}\mc C(B)
+$$ 
+and 
+$$
+\overline A^Y=\bigcap_{B\in\mc B}B=\bigcap_{B\in\mc B}\bigcap_{C\in\mc C(B)}(Y\cap C)=\bigcap_{C\in\mc C}(Y\cap C)=Y\cap\bigcap_{C\in\mc C}C=Y\cap\overline A.
+$$ 
+\end{proof}
+
+\hrule\medskip
+
+\noi\textbf{Theorem 17.6 p. 97 of the book.} Recall the statement: % variant https://docs.google.com/document/d/17l98t_t6zXfymBp91exwc1XqfGgzNXKYvZzOtOorNFg/edit?tab=t.0
+
+\begin{thm}[Theorem 17.6 p. 97 of the book]%\label{T17.6} 
+Let $A$ be a subset of the topological space $X$; let $A'$ be the set of all limit points of $A$. Then $\overline A=A\cup A'$. 
+\end{thm} 
+
+Here is a slightly different proof. 
+
+\begin{proof}
+In this proof we denote the closure $\overline B$ of a subset $B$ of $X$ by $B^-$. To show $A'\subset A^-$, note that if $x$ is in $A'$, then $x$ is in $(A\sm\{x\})^-\subset A^-$. It only remains to prove $A^-\subset A\cup A'$. Assume by contradiction that there is an $x$ in $A^-$ which is not in $A\cup A'$. We have in particular $x\notin(A\sm\{x\})^-$, that is, $x\in U:=X\sm(A\sm\{x\})^-$ with $U$ open. The fact that $x$ is in $\overline A$ implies that $U$ intersects $A$. Let $a$ be such an intersection point. Since $x$ is not in $A$ but $a$ is, we have $a\ne x$, hence $a$ is in $A\sm\{x\}$, which is disjoint from $U$, contradiction. 
+\end{proof} 
+
+\hrule\medskip
+
+\noi\textbf{Theorem 17.8 p. 99 of the book.} Recall the statement: 
+
+\begin{thm}[Theorem 17.8 p. 99 of the book]%\label{T17.8} 
+Every finite point set in a Hausdorff space $X$ is closed.
+\end{thm} 
+
+Here is a slightly different proof. 
+
+\begin{proof}
+Let $x_0$ be a point of $X$, let $\mc U$ be the set of all those open subsets of $X$ which do not contain $x_0$, let $U$ be the union of the members of $\mc U$, and let $x$ be in $X\sm\{x_0\}$. It suffices to show that $x\in U$, that is, $x\in V$ for some $V$ in $\mc U$, which is clear. 
+\end{proof} 
+
+\hrule\medskip
+
+\noi\textbf{Theorem 17.9 p. 99 of the book.} Recall the statement: 
+
+\begin{thm}[Theorem 17.8 p. 99 of the book]%\label{T17.9} 
+Let $X$ be a space satisfying the $T_1$ axiom; let $A$ be a subset of $X$. Then the point $x$ is a limit point of $A$ if and only if every neighborhood of $x$ contains infinitely many points of $A$.
+\end{thm} 
+
+Here is a slightly different proof. 
+
+\begin{proof}
+It suffices to show that the following two conditions are equivalent: 
+
+(1) there is a neighborhood $U$ of $x$ such that $U\cap A=\{x\}$, 
+
+(2) there is a neighborhood $V$ of $x$ such that $V\cap A$ is finite. 
+
+\noi Clearly (1) implies (2). To prove the converse it suffices to set $U:=(V\sm A)\cup\{x\}$. (Since $X$ is $T_1$, the subset $V$, being obtained from $U$ by removing finitely many points, is open.) 
+\end{proof} 
+
+\hrule\medskip
+
+\noi\textbf{Theorem 18.1 p. 104 of the book.} Recall the statement:
+
+\begin{thm}
+Let $X$ and $Y$ be topological spaces; let $f: X \to Y$. Then the following are equivalent:
+\begin{itemize}
+    \item[$(1)$] $f$ is continuous.
+    \item[$(2)$] For every subset $A$ of $X$, one has $f(\overline{A}) \subset \overline{f(A)}$.
+    \item[$(3)$] For every closed set $B$ of $Y$, the set $f^{-1}(B)$ is closed in $X$.
+    \item[$(4)$] For each $x \in X$ and each neighborhood $V$ of $f(x)$, there is a neighborhood $U$ of $x$ such that $f(U) \subset V$.
+\end{itemize}
+If the condition in $(4)$ holds for the point $x$ of $X$, we say that $f$ is \textbf{continuous at the point} $x$.
+\end{thm} % variant https://docs.google.com/document/d/1I1JMPqDsBb9GX9Z7pExBEbHFRrgRjV5s89uDdqfRX3E/edit?tab=t.0
+
+The proof that (4) implies (1) is written as follows: ``Let $V$ be an open set of $Y$; let $x$ be a point of $f^{-1}(V)$. Then $f(x) \in V$, so that by hypothesis there is a neighborhood $U_x$ of $x$ such that $f(U_x) \subset V$. Then $U_x \subset f^{-1}(V)$. It follows that $f^{-1}(V)$ can be written as the union of the open sets $U_x$, so that it is open.'' One can avoid using the Axiom of Choice by the following wording: $f^{-1}(V)$ can be written as the union of the open sets $U$ such that $x\in U\subset f^{-1}(V)$, so that it is open. (A similar comment was made after Lemma~\ref{L13.1}.) 
+
+\end{document}
