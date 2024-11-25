@@ -1,13 +1,13 @@
 % munkres-a-e 
 % !TEX encoding = UTF-8 Unicode
 % https://docs.google.com/document/d/1ggGZML_7mP6YBbQ7vZybQTcZ91Eb7HESuhqzNPRQlw8/edit?tab=t.0
-% https://www.site24x7.com/tools/time-stamp-converter.html 11732214839
+% https://www.site24x7.com/tools/time-stamp-converter.html 1732549489
 % https://www.overleaf.com/read/kdwwjvqjrzwb#9fe3a6
 % https://github.com/Pierre-Yves-Gaillard/About-Topology-by-Munkres
 \documentclass[12pt,letterpaper]{article}
 \usepackage{fancyhdr}
 \fancyhf{}
-\fancyfoot[R]{{\tiny munkres-a-e,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1732214839}} 
+\fancyfoot[R]{{\tiny munkres-a-e,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1732549489}} 
 %
 % https://latexonline.cc/ (doesn't work well; abandoned) - https://www.google.com/search?q=current+date+and+time
 % (https://www.unixtimestamp.com/ bad) 
@@ -701,6 +701,211 @@ It suffices to show that the following two conditions are equivalent:
 \end{proof} 
 
 \hrule\medskip
+
+\noi\textbf{Exercise 17.3 p. 100 of the book.} Show that if $A$ is closed in $X$ and $B$ is closed in $Y$, then $A\times B$ is closed in $X\times Y$.
+
+\noi\textbf{Solution.} Setting $U:=X\sm A,V:=Y\sm B$, we get
+$$
+(X\times Y)\sm(A\times B)=(X\times V)\cup(U\times Y).
+$$ 
+\hrule\medskip
+
+\noi\textbf{Exercise 17.5 p. 100 of the book.} Let $X$ be an ordered set in the order topology. Show that $\overline{(a,b)}\subset[a,b]$. Under what conditions does equality hold?
+
+\noi\textbf{Solution.} To prove the indicated inclusion, it suffices to show that 
+\begin{equation}\label{E17.5}
+[a,b]\text{ is closed.}
+\end{equation} 
+To prove \eqref{E17.5}, let $c$ be in $X\sm[a,b]$. Assume first $c<a$. If there is a $d$ less than $c$, then $(d,a)$ contains $c$, and is open and disjoint from $[a,b]$. If $c$ is the least element of $X$, then $[c,a)$ contains $c$, and is open and disjoint from $[a,b]$. The case $c>b$ is similar. 
+
+For the second question, note that, by \eqref{E17.5}, the set $\overline{(a,b)}$ is equal to $(a,b)$, to $[a,b)$, to $(a,b]$, or to $[a,b]$. Thus it suffices to determine when $a$ or $b$ is in $\overline{(a,b)}$. We claim: 
+
+(a) the point $a$ is not in $\overline{(a,b)}$ if and only if it has an immediate successor, 
+
+(b) the point $b$ is not in $\overline{(a,b)}$ if and only if it has an immediate predecessor. 
+
+\noi To prove this, we can, by Theorems 16.4 p.~91 and 17.4 p.~95, assume that $X=[a,b]$. To prove (a), note that 
+$$
+a\notin\overline{(a,b)}
+$$ 
+$$
+\iff\text{there is a $c$ in $[a,b]$ with $a\in[a,c)$ and }[a,c)\cap(a,b)=\varnothing
+$$ 
+$$
+\iff\text{there is a $c$ in $[a,b]$ which is the immediate successor of $a$.}
+$$ 
+The proof of (b) is similar. 
+
+\hs
+
+\noi\textbf{Exercise 17.6 p. 101 of the book.} Let $A, B$, and $A_{\alpha}$ denote subsets of a space $X$. Prove the following:
+\begin{enumerate}
+    \item[(a)] If $A \subset B$, then $\overline{A} \subset \overline{B}$.
+    \item[(b)] $\overline{A \cup B}=\overline{A}\cup\overline{B}$.
+    \item[(c)] $\overline{\bigcup A_{\alpha}} \supset \bigcup \overline{A}_{\alpha}$; give an example where equality fails.
+\end{enumerate}
+
+\noi\textbf{Solution.} (a) We have $A\subset\overline B$, and thus $\overline{A} \subset \overline{B}$. 
+
+\noi(b) For $x$ in $X$ the following conditions are equivalent: 
+
+\noi(A) $x\notin\overline{A\cup B}$, 
+
+\noi(B) some neighborhood $U$ of $x$ does not intersect $A\cup B$, 
+
+\noi(C) some neighborhood $U$ of $x$ intersects neither $A$ nor $B$, 
+
+\noi(D) (some neighborhood $V$ of $x$ does not intersect $A$) and (some neighborhood $W$ of $x$ does not intersect $B$), 
+
+\noi(E) $x\notin\overline{A}$ and $x\notin\overline{B}$, 
+
+\noi(F) $x\notin\overline{A}\cup\overline{B}$,
+
+\noi the implication (D)$\implies$(C) being obtained by setting $U:=V\cap W$. % previous version https://docs.google.com/document/d/1dG3nKbyB47SJOAJsVicdS2wlnvA0YCdtvl8Yt7BpTmw/edit?tab=t.0
+
+\noi(c) For $x$ in $X$ we have: 
+$$
+x\notin\overline{\bigcup A_\alpha}
+$$ 
+$$
+\implies\text{some neighborhood $U$ of $x$ does not intersect }\bigcup A_\alpha
+$$ 
+$$
+\implies\text{some neighborhood $U$ of $x$ intersects no }A_\alpha
+$$ 
+$$
+\implies x\notin\overline{A_\alpha}\text{ for all }\alpha
+$$ 
+$$
+\implies x\notin\bigcup\overline{A_\alpha}.
+$$ 
+
+\hs 
+
+\noi\textbf{Exercise 17.8 p. 108 of the book.} Let $A, B, \text{ and } A_\alpha$ denote subsets of a space $X$. Determine whether the following equations hold; if an equality fails, determine whether one of the inclusions $\subset$ or $\supset$ holds.
+\begin{enumerate}%[(a)]
+\item[(a)] $\overline{A \cap B}= \overline{A} \cap \overline{B}$
+\item[(b)] $\overline{\bigcap A_\alpha}=\bigcap\overline{A_\alpha}$
+\item[(c)] $\overline{A\sm B}=\overline{A}\sm\overline{B}$.
+\end{enumerate}
+
+\noi\textbf{Solution.} We claim that (b) holds, and will clearly imply (a). Proof: Let $x$ be in $X$. Then 
+$$
+x\in\overline{\bigcap A_\alpha}
+$$ 
+$$
+\iff\text{ every neighborhood of $x$ intersects }\bigcap A_\alpha
+$$ 
+$$
+\iff\text{ every neighborhood of $x$ intersects $A_\alpha$ for all $\alpha$}
+$$ 
+$$
+\iff x\text{ is in }\overline{A_\alpha}\text{ for all }\alpha,
+$$ 
+$$
+\iff x\text{ is in }\bigcap\overline{A_\alpha}.
+$$ 
+(c) If $X=A=\R$ and $B=\Q$, then we have $\overline{A\sm B}=\R$ and $\overline{A}\sm\overline{B}=\varnothing$. Thus our only hope is to have $\overline{A}\sm\overline{B}\subset\overline{A\sm B}$ for all $A,B$. We can rewrite this inclusion as $\overline{A}\cap\overline{B}^c\subset\overline{A\cap B^c}$ for all $A,B$, where $C^c$ means $X\sm C$. In view of (a), this is equivalent to $\overline{B}^c\subset\overline{B^c}$ for all $B$. To prove this, it suffices to show that $\overline{B}^c$ is the interior of $B^c$. Let $U$ be an open subset of $X$ contained in $B^c$. It is enough to prove $U\subset\overline{B}^c$. We have $U^c\supset B$. Since $U^c$ is closed, this implies $U^c\supset\overline B$, and thus $U\subset\overline{B}^c$. 
+
+\hs
+
+\noi\textbf{Exercise 17.9 p. 101 of the book.} Let $A \subset X$ and $B \subset Y$. Show that in the space $X\times Y$,
+\[
+\overline{A\times B}=\overline{A}\times\overline{B}.
+\]
+
+\noi\textbf{Solution.} We have $\overline{A\times B}\subset\overline{A}\times\overline{B}$ by Exercise 17.3. To prove the converse inclusion, let $z=x\times y$ be in $\overline{A}\times\overline{B}$, that is, $x\in\overline{A},y\in\overline{B}$, and let $W$ be an open subset of $X\times Y$ containing $z$. It suffices to show $W\cap(A\times B)\ne\varnothing$. There is an open subset $U$ of $X$ containing $x$ and an open subset $V$ of $Y$ containing $y$ such that $U\times V\subset W$. It is enough to prove $(U\times V)\cap(A\times B)\ne\varnothing$, that is $(U\cap A)\times(V\cap B)\ne\varnothing$. But this follows from the assumption that $x\in\overline{A}$ and $y\in\overline{B}$. 
+
+\hs
+
+\noi\textbf{Exercise 17.10 p. 101 of the book.} Show that every order topology is Hausdorff.
+
+\noi\textbf{Solution.} Let $x,y$ be in $X$ with $x<y$. If there is a $z$ in $(x,y)$ we separates $x$ and $y$ with the open rays $(-\infty,z)$ and $(z,+\infty)$. If $(x,y)$ is empty, we separates $x$ and $y$ with the open rays $(-\infty,y)$ and $(z,+\infty)$. 
+
+\hs 
+
+%\noi\textbf{Exercise 17.11 p. 101 of the book.} Show that the product of two Hausdorff spaces is Hausdorff. 
+%\noi\textbf{Exercise 17.12 p. 101 of the book.} Show that a subspace of a Hausdorff space is Hausdorff. 
+
+\noi\textbf{Exercise 17.13 p. 101 of the book.} Show that $X$ is Hausdorff if and only if the \emph{diagonal} $\Delta=\{x\times x\mid x\in X\}$ is closed in $X\times X$. 
+
+\noi\textbf{Solution.} Let $\overline\Delta$ be the closure of the diagonal, and let $z=x\times y$ be in $X^2$. We claim: $z\notin\overline\Delta\iff$ $x$ and $y$ can be separated by disjoint open sets. 
+
+\noi$\implies$: There is an open subset $W$ of $X^2$ such that $z\in W$ and $W\cap\Delta=\varnothing$. There are open subsets $U$ and $V$ of $X$ such that $z\in U\times V\subset W$. We have $x\in U,y\in V$. If $u$ was in $U\cap V$, then $u\times u$ would be in $\Delta\cap W$, contradiction. 
+
+\noi$\impliedby$: If there are disjoint open subsets $U$ and $V$ of $X$ such that $x\in U,y\in V$, then $z$ is in $U\times V$, and it suffices to show $(U\times V)\cap\Delta=\varnothing$. But $(U\times V)\cap\Delta$ is the diagonal of $U\cap V$, which is empty. 
+
+\hs 
+
+\noi\textbf{Exercise 17.14 p. 101 of the book.} In the finite complement topology on $\mathbb{R}$, to what point or points does the sequence $x_{n}=\frac1n$ converge? 
+
+\noi\textbf{Solution.} Set $S:=\{\frac1n\ |\ n\in\Z_+\}$, and not that any nonempty open subset $U$ of $\R$ (with the finite complement topology) intersects $S$. This means that $\R$ is the set of limits of the sequence $\frac1n$. 
+
+\hs 
+
+\noi\textbf{Exercise 17.15 p. 101 of the book.} Show the $T_{1}$ axiom is equivalent to the condition that for each pair of points of $X$, each has a neighborhood not containing the other. 
+
+\noi\textbf{Solution.} (In the statement of the Exercise, ``each has a neighborhood not containing the other'', means ``each point has a neighborhood not containing the other point''.) Recall that $X$ is $T_1$ if and only if the finite subsets of $X$ are closed. If $X$ is $T_1$ and $x$ and $y$ are distinct points of $X$, the open subsets $X\sm\{x\}$ and $X\sm\{y\}$ do the job. If $X$ is \emph{not} $T_1$, there distinct points $x$ and $y$ of $X$ such that $y$ is in the closure of $\{x\}$, and any neighborhood of $y$ contains $x$. 
+
+\hs
+
+\noi\textbf{Exercise 17.16 p. 101 of the book.} Consider the five topologies on $\mathbb{R}$ given in Exercise 7 of $\S 13$. 
+    \begin{enumerate}
+        \item[(a)] Determine the closure of the set $K=\left\{\frac1n\mid n\in \mathbb{Z}_{+}\right\}$ under each of these topologies.
+        \item[(b)] Which of these topologies satisfy the Hausdorff axiom? the $T_{1}$ axiom?
+    \end{enumerate}
+
+\noi\textbf{Solution.} Recall that the five topologies are: 
+
+$\T_s:=$ standard topology, 
+
+$\T_K:=$ topology of $\R_K$, 
+
+$\T_{fc}:=$ finite complement topology, 
+
+$\T_u:=$ upper limit topology (having the sets $(a,b]$ as basis), 
+
+$\T_\infty:=$ topology having the sets $(-\infty,a)$ as basis. 
+
+\noi Recall also that $\T_K$ was defined as follows: Let $K$ be defined as above. The topology $\T_K$ generated by all open intervals $(a,b)$, along with all sets of the form $(a,b)\sm K$ will be called the $K$-topology on $\R$. When $\R$ is given this topology, we denote it by $\R_K$. We define $\R_s,\R_{fc},\R_u$ and $\R_\infty$ similarly. 
+
+\noi(a) Let $C_*$ be the closure of $K$ in $\R_*$. Clearly, $C_s=C_\infty=K\cup\{0\}$ and $C_{fc}=\R$ (see Exercise~17.14). We claim $C_K=K$. Indeed, the inclusion $C_K\subset K\cup\{0\}$ is easy, and we have $0\notin C_u$ because 0 is in the open set $(-1,1)\sm K$, which is disjoint from $K$. We claim $C_u=K$. The argument is the same, with $(-1,0]$ instead of $(-1,1)\sm K$.  
+
+\noi(b) Clearly $\R_s,\R_K$ and $\R_u$ are Hausdorff, and $\R_{fc}$ is $T_1$ but not Hausdorff. Finally, $\R_\infty$ is also $T_1$ but not Hausdorff. The fact that it is $T_1$ is clear. It is not Hausdorff because all the nonempty open sets are basic, and the intersection of any two basic sets is basic. 
+
+\hs 
+
+\noi\textbf{Exercise 17.17 p. 101 of the book.} Consider the lower limit topology on $\mathbb{R}$ and the topology given by the basis $\mathcal{C}$ of Exercise 8 of $\S 13$. Determine the closures of the intervals $A=(0,\sqrt{2})$ and $B=(\sqrt{2},3)$ in these two topologies. 
+
+\noi\textbf{Solution.} Recall the definition of $\mc C$: 
+$$
+\mc C=\{[a,b)\ |\ a<b,\ a \text{ and $b$ rational}\}.
+$$ 
+For $\subset\R$ let ${\overline S\,}^\ell$ and ${\overline S\,}^{\mc C}$ denote respectively the closure in each of the two topologies in the statement. Then we have 
+$$
+{\overline{(0,\sqrt2)}\,}^\ell=[0,\sqrt2),\quad{\overline{(0,\sqrt2)}\,}^{\mc C}=[0,\sqrt2],\quad
+{\overline{(\sqrt2,3)}\,}^\ell=[\sqrt2,3)={\overline{(\sqrt2,3)}\,}^{\mc C}
+$$ 
+The justifications are left to the reader. 
+
+\hs
+
+\noi\textbf{Exercise 17.18 p. 101 of the book.} Determine the closures of the following subsets of the ordered square:
+    \[
+    \begin{aligned}
+    & A = \left\{\textstyle{\frac{1}{n}}\times 0 \mid n \in \mathbb{Z}_{+}\right\} \\
+    & B = \left\{(1-\textstyle{\frac{1}{n}})\times\textstyle{\frac{1}{2}} \mid n \in \mathbb{Z}_{+}\right\} \\
+    & C = \{x \times 0 \mid 0 < x < 1\} \\
+    & D = \left\{x \times \textstyle{\frac{1}{2}} \mid 0 < x < 1\right\} \\
+    & E = \left\{\textstyle{\frac{1}{2}} \times y \mid 0 < y < 1\right\}.
+    \end{aligned}
+    \]
+\noi\textbf{Solution.} Let $X$ be the ordered square. For any $S\subset X$ we set $S':=\overline S\sm S$. We have 
+$$
+A'=\{0\times1\},\quad B'=\{1\times0\},\quad C'=[0,1)\times\{1\},\quad D'=(0,1]\times\{0\},\quad E'=\{\textstyle{\frac{1}{2}}\times0,\textstyle{\frac{1}{2}}\times1\}.
+$$ 
+
+\hs
 
 \noi\textbf{Theorem 18.1 p. 104 of the book.} Recall the statement:
 
