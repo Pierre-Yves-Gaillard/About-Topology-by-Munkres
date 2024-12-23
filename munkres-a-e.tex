@@ -1,13 +1,13 @@
 % munkres-a-e 
 % !TEX encoding = UTF-8 Unicode
 % https://docs.google.com/document/d/1ggGZML_7mP6YBbQ7vZybQTcZ91Eb7HESuhqzNPRQlw8/edit?tab=t.0
-% https://www.site24x7.com/tools/time-stamp-converter.html 1732549489
+% https://www.site24x7.com/tools/time-stamp-converter.html 1734969073
 % https://www.overleaf.com/read/kdwwjvqjrzwb#9fe3a6
 % https://github.com/Pierre-Yves-Gaillard/About-Topology-by-Munkres
 \documentclass[12pt,letterpaper]{article}
 \usepackage{fancyhdr}
 \fancyhf{}
-\fancyfoot[R]{{\tiny munkres-a-e,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1732549489}} 
+\fancyfoot[R]{{\tiny munkres-a-e,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1734969073}} 
 %
 % https://latexonline.cc/ (doesn't work well; abandoned) - https://www.google.com/search?q=current+date+and+time
 % (https://www.unixtimestamp.com/ bad) 
@@ -921,5 +921,96 @@ If the condition in $(4)$ holds for the point $x$ of $X$, we say that $f$ is \te
 \end{thm} % variant https://docs.google.com/document/d/1I1JMPqDsBb9GX9Z7pExBEbHFRrgRjV5s89uDdqfRX3E/edit?tab=t.0
 
 The proof that (4) implies (1) is written as follows: ``Let $V$ be an open set of $Y$; let $x$ be a point of $f^{-1}(V)$. Then $f(x) \in V$, so that by hypothesis there is a neighborhood $U_x$ of $x$ such that $f(U_x) \subset V$. Then $U_x \subset f^{-1}(V)$. It follows that $f^{-1}(V)$ can be written as the union of the open sets $U_x$, so that it is open.'' One can avoid using the Axiom of Choice by the following wording: $f^{-1}(V)$ can be written as the union of the open sets $U$ such that $x\in U\subset f^{-1}(V)$, so that it is open. (A similar comment was made after Lemma~\ref{L13.1}.) 
+
+\hs
+
+\noi\textbf{Exercise 17.19 p. 102 of the book.} If $A\subset X$, we define the \textbf{boundary} of $A$ by the equation
+$$
+\operatorname{Bd}A=\overline{A}\cap(\overline{X-A})
+$$
+\begin{enumerate}
+    \item[(a)] Show that $\operatorname{Int} A$ and $\operatorname{Bd} A$ are disjoint, and $\overline{A}=\operatorname{Int}A\cup\operatorname{Bd}A$.
+    \item[(b)] Show that $\operatorname{Bd}A=\varnothing\Leftrightarrow A$ is both open and closed.
+    \item[(c)] Show that $U$ is open $\Leftrightarrow\operatorname{Bd} U=\overline{U}-U$.
+    \item[(d)] If $U$ is open, is it true that $U=\operatorname{Int}(\,\overline{U}\,)$ ? Justify your answer.
+\end{enumerate}
+
+\noi\textbf{Solution.} In this Solution we use the following notation: $A^c:=X\sm A,A^-:=$ closure of $A$, $A^o:=$ interior of $A$, $A^b:=$ boundary of $A$. Note that $A^b$ is closed, that $A^{c\,b}=A^b$, and that $A^b=A^-\cap A^{c-}=A^-\cap A^{o\,c}=A^-\sm A^o$. In particular, the equality 
+$$
+A^b=A^-\sm A^o
+$$ 
+implies (a) and (b). 
+
+\noi(c) We must show $U^o=U\Leftrightarrow U^-\sm U^o=U^-\sm U$, which is clear. 
+
+\noi(d) The answer is no, a counterexample being give by $\R\sm\{0\}$ in $\R$. 
+
+\hs
+
+\noi\textbf{Exercise 17.20 p. 102 of the book.} Find the boundary and the interior of each of the following subsets of $\mathbb{R}^{2}$:
+\begin{enumerate}
+    \item[(a)] $A=\{x\times y\mid y=0\}$
+    \item[(b)] $B=\{x\times y\mid x>0\text{ and }y\ne0\}$
+    \item[(c)] $C=A\cup B$
+    \item[(d)] $D=\{x\times y\mid x\text{ is rational}\}$
+    \item[(e)] $E=\{x\times y\mid 0<x^2-y^2\le1\}$
+    \item[(f)] $F=\{x\times y\mid x\ne0\text{ and }y\leq1/x\}$. 
+\end{enumerate}
+
+\noi\textbf{Solution.} We use the same notations as in Exercise 17.19. 
+
+\noi(a) $A^-=A$ ($A$ is closed), $A^o=\varnothing,\ A^b=A$. 
+
+\noi(b) $B^-=\{x\times y\mid x\ge0,\ B^o=B$ ($B$ is open), $B^b=\{x\times y\mid x=0\}\cup\{x\times y\mid x\ge0\text{ and }y=0\}$. 
+
+\noi(c) $C^-=\{x\times y\mid x\ge0\},\ C^o=\{x\times y\mid x>0\},\ C^b=\{x\times y\mid xy=0\text{ and }x\le0\}$. 
+
+\noi(d) $D^-=\R^2,\ D^o=\varnothing,\ D^b=\R^2$. 
+
+\noi(e) $E^-=\{x\times y\mid 0\le x^2-y^2\le1\},\ E^o=\{x\times y\mid 0<x^2-y^2<1\},\ E^b=\{x\times y\mid x^2-y^2\in\{0,1\}\}$. 
+
+\noi(f) $F^-=\{x\times y\mid(x\neq 0\text{ and }y\leq1/x)\text{ or }x=0\},\ F^o=\{x\times y\mid x\neq 0\text{ and }y<1/x\},\\{}\hskip16pt F^b=\{x\times y\mid(x\neq 0\text{ and }y=1/x)\text{ or }x=0\}$. 
+
+\hs 
+
+\noi\textbf{Exercise 18.7 p. 111 of the book.} (a) Suppose that $f: \mathbb{R} \rightarrow \mathbb{R}$ is ``continuous from the right,'' that is,
+\[
+\lim _{x \rightarrow a^{+}} f(x)=f(a)
+\]
+for each $a \in \mathbb{R}$. Show that $f$ is continuous when considered as a function from $\mathbb{R}_{\ell}$ to $\mathbb{R}$.
+
+\noi(b) Can you conjecture what functions $f: \mathbb{R} \rightarrow \mathbb{R}$ are continuous when considered as maps from $\mathbb{R}$ to $\mathbb{R}_{\ell}$ ? As maps from $\mathbb{R}_{\ell}$ to $\mathbb{R}_{\ell}$ ? We shall return to this question in Chapter 3.
+
+\noi\textbf{Solution.} (a) Assume $f(x)\in(a,b)$ for some $x,a,b\in\R$. It suffices to show that there is a $d$ in $\R$ such that $x\in[x,d)$ and $[x,d)\subset f^{-1}((a,b))$, that is $x\in[x,d)$ and $f([x,d))\subset(a,b)$. We have 
+\[
+\lim _{y\rightarrow x^{+}}f(y)=f(x).
+\] 
+Set $\varepsilon:=\min(b-f(x),f(x)-a)$. There is a $\delta>0$ such that $y\in[x,x+\delta)$ implies $|f(y)-f(x)|<\varepsilon$, and thus $f(y)\in(a,b)$. This shows that $d:=x+\delta$ does the job. 
+
+\hs 
+
+\noi\textbf{Exercise 18.8 p. 111 of the book.} Let $Y$ be an ordered set in the order topology. Let $f, g: X \rightarrow Y$ be continuous.
+
+\noindent (a) Show that the set $\{x \mid f(x) \leq g(x)\}$ is closed in $X$.
+
+\noindent (b) Let $h:X\rightarrow Y$ be the function
+$$
+h(x)=\min \{f(x), g(x)\}
+$$
+Show that $h$ is continuous. [Hint: Use the pasting lemma.]
+
+\noi\textbf{Solution.} I think that $X$ is implicitly assumed to be a topological space. 
+
+\noi(a) Define $u:X\to Y^2$ by $u(x):=f(x)\times g(x)$. Note that $u$ is continuous. Set 
+$$
+B:=\{y\times z\in Y^2\mid y\le z\}.
+$$ 
+Then the set in the statement of (a) is $u^{-1}(B)$. Thus, it suffices to show that $B$ is closed. Set $U:=\{y\times z\in Y^2\mid y>z\}$. We must check that $U$ is open. Let $y\times z$ be in $U$. There are basic open sets $V,W\subset Y$ such $y\in V,z\in W$ and $y'>z'$ for all $y'\in V$ and all $z'\in W$. 
+
+\hs
+
+\noi\textbf{Exercise 18.13 p. 112 of the book.} Let $A\subset X$; let $f:A\to Y$ be continuous; let $Y$ be Hausdorff. Show that if $f$ may be extended to a continuous function $g:\overline A\to Y$, then $g$ is uniquely determined by $f$. 
+
+\noi\textbf{Solution.} Let $h:\overline A\to Y$ be another continuous extension of $f$, assume by contradcition that $g(x_0)\ne h(x_0)$ for some $x_0$ in $\overline A$, and define $u:\overline A\to Y^2$ by $u(x):=g(x)\times h(x)$. In particular $u$ is continuous. By Exercise 17.13 p.~101 of the book, $U:=\{y\times y'\in Y^2\ |\ y\ne y'\}$ is open. Hence $u^{-1}(U)$ is open, and it is nonempty because it contains $x_0$, hence we have $a\in u^{-1}(U)$, that is, $g(a)\ne h(a)$ for some $a$ in $A$, contradicting the equalities $g(a)=f(a)=h(a)$. 
 
 \end{document}
